@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 
 import '../../core/assets/assets.gen.dart';
-import '../../data/models/landing_models.dart';
+import '../models/landing_models.dart';
 import '../widget/buttons.dart';
 import '../widget/landing_content.dart';
 import '../widget/landing_indicator.dart';

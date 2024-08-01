@@ -13,7 +13,6 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
   final namaController = TextEditingController();
   final umurController = TextEditingController();
-  final alamatController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool _obscureText = true;
@@ -151,47 +150,6 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 18),
-
-                Text(
-                  "Alamat",
-                  textAlign: TextAlign.left,
-                  style: regularwhitetext.copyWith(fontSize: 14),
-                ),
-                const SizedBox(height: 12),
-                // ignore: avoid_unnecessary_containers
-                Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.blue.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                        offset:
-                            const Offset(0, 2), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: TextField(
-                    controller: alamatController,
-                    decoration: InputDecoration(
-                      hintText: 'Masukan alamat lengkap',
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                    style: const TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-
                 const SizedBox(height: 18),
                 Text(
                   "Kelas",

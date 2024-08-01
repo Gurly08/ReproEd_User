@@ -21,10 +21,10 @@ class _LoginState extends State<Login> {
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 155, 33, 255),
         body: SafeArea(
-          bottom: false,
-          child: Stack(
-            children: [
-              //gambar sebagai gambar tampilan disetiap landing page(Sebagai BG)
+            bottom: false,
+            child: Stack(
+              children: [
+                //gambar sebagai gambar tampilan disetiap landing page(Sebagai BG)
                 Image.asset(
                   "assets/images/dna.png",
                   width: MediaQuery.of(context).size.width,
@@ -68,9 +68,10 @@ class _LoginState extends State<Login> {
                             Text(
                               "Selamat Datang Kembali Di Aplikasi ReproEd",
                               textAlign: TextAlign.start,
-                              style: mediumWhiteTextStyle.copyWith(fontSize: 15),
+                              style:
+                                  mediumWhiteTextStyle.copyWith(fontSize: 15),
                             ),
-                            
+
                             const SizedBox(height: 12),
 
                             Text(
@@ -90,7 +91,8 @@ class _LoginState extends State<Login> {
                                     color: Colors.blue.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 3,
-                                    offset: const Offset(0, 2), // changes position of shadow
+                                    offset: const Offset(
+                                        0, 2), // changes position of shadow
                                   ),
                                 ],
                               ),
@@ -132,7 +134,8 @@ class _LoginState extends State<Login> {
                                     color: Colors.blue.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 3,
-                                    offset: const Offset(0, 2), // changes position of shadow
+                                    offset: const Offset(
+                                        0, 2), // changes position of shadow
                                   ),
                                 ],
                               ),
@@ -148,7 +151,9 @@ class _LoginState extends State<Login> {
                                   ),
                                   prefixIcon: const Icon(Icons.lock_outlined),
                                   suffixIcon: IconButton(
-                                    icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+                                    icon: Icon(_obscureText
+                                        ? Icons.visibility
+                                        : Icons.visibility_off),
                                     onPressed: () {
                                       setState(() {
                                         _obscureText = !_obscureText;
@@ -162,14 +167,15 @@ class _LoginState extends State<Login> {
                                 obscureText: _obscureText,
                               ),
                             ),
-                            
+
                             const SizedBox(height: 35),
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.push(
-                                      context, 
-                                        MaterialPageRoute(builder: (context) => const Dashboard())
-                                    );
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Dashboard()));
                               },
                               style: ElevatedButton.styleFrom(
                                   shape: const StadiumBorder(),
@@ -180,7 +186,8 @@ class _LoginState extends State<Login> {
                               child: Text(
                                 "Masuk",
                                 textAlign: TextAlign.center,
-                                style: mediumPURPLETextStyle.copyWith(fontSize: 18),
+                                style: mediumPURPLETextStyle.copyWith(
+                                    fontSize: 18),
                               ),
                             ),
                             Row(
@@ -190,19 +197,22 @@ class _LoginState extends State<Login> {
                                 Text(
                                   "Apakah kamu sudah memiliki akun ReproEd?",
                                   textAlign: TextAlign.center,
-                                  style: regularwhitetext.copyWith(fontSize: 8),
+                                  style:
+                                      regularwhitetext.copyWith(fontSize: 12),
                                 ),
                                 TextButton(
                                   onPressed: () {
                                     Navigator.push(
-                                      context, 
-                                        MaterialPageRoute(builder: (context) => const Signup())
-                                    );
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Signup()));
                                   },
                                   child: Text(
                                     "Daftar",
                                     textAlign: TextAlign.center,
-                                    style: regularwhitetext.copyWith(fontSize: 5),
+                                    style:
+                                        regularwhitetext.copyWith(fontSize: 8),
                                   ),
                                 ),
                               ],
@@ -213,9 +223,8 @@ class _LoginState extends State<Login> {
                     ),
                   ],
                 ),
-            ],
-          )
-        ),
+              ],
+            )),
       ),
     );
   }

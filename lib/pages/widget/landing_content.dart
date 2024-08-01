@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reproeduser/data/models/landing_models.dart';
+import 'package:reproeduser/pages/models/landing_models.dart';
 
 import 'theme.dart';
 

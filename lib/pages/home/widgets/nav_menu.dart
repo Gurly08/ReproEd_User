@@ -6,7 +6,7 @@ class NavMenu extends StatelessWidget {
   final String label;
   final bool isActive;
   final VoidCallback onPressed;
-  const NavMenu ({
+  const NavMenu({
     super.key,
     required this.iconPath,
     required this.label,
@@ -22,7 +22,7 @@ class NavMenu extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         decoration: BoxDecoration(
-          color: isActive ? Colors.purpleAccent : null,
+          color: isActive ? const Color.fromARGB(255, 240, 173, 252) : null,
           borderRadius: const BorderRadius.all(Radius.circular(18.0)),
         ),
         child: Row(
@@ -33,12 +33,10 @@ class NavMenu extends StatelessWidget {
             ),
             if (isActive) const SizedBox(width: 4.0),
             if (isActive)
-              Text(
-                label,
-                style: mediumPURPLETextStyle.copyWith(
-                  color: Colors.deepPurple,
-                )
-              ),
+              Text(label,
+                  style: mediumPURPLETextStyle.copyWith(
+                    color: Colors.deepPurple,
+                  )),
           ],
         ),
       ),
