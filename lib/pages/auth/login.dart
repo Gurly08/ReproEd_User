@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../home/home.dart';
+import '../home/dashboard.dart';
 import '../widget/theme.dart';
 import 'signup.dart';
 
@@ -169,7 +168,7 @@ class _LoginState extends State<Login> {
                               onPressed: () {
                                 Navigator.push(
                                       context, 
-                                        MaterialPageRoute(builder: (context) => const Home())
+                                        MaterialPageRoute(builder: (context) => const Dashboard())
                                     );
                               },
                               style: ElevatedButton.styleFrom(
