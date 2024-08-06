@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../edukasi/edukasi_artikel.dart';
+import '../models/edukasi_models.dart';
+import '../models/test_models.dart';
+import '../profil/profil.dart';
+import '../test/test_pemahaman.dart';
 import 'home.dart';
 import 'widgets/nav_menu.dart';
 
@@ -13,18 +18,20 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
-    const Home(), 
-    const Center(
-      child: Text('Edkasi')
-    ),
-    const Center(
-      child: Text('Profil')
-    ),
+    const Home(),
+    TestPemahaman(listTest: listTest),
+    EdukasiArtikel(listEdukasi: listEdukasi),
+    const Profil(),
   ];
 
-  void _onItemTapped(int index){
-    _selectedIndex = index;
-    setState((){});
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+      // ignore: avoid_print
+      print('Index tapped: $index');
+      // ignore: avoid_print
+      print('Pages length: ${_pages.length}');
+    });
   }
 
   @override
@@ -47,16 +54,22 @@ class _DashboardState extends State<Dashboard> {
               onPressed: () => _onItemTapped(0),
             ),
             NavMenu(
-              iconPath: Icons.auto_stories_outlined,
-              label: 'Edukasi',
+              iconPath: Icons.quiz_outlined,
+              label: 'Karaktaku',
               isActive: _selectedIndex == 1,
               onPressed: () => _onItemTapped(1),
             ),
             NavMenu(
-              iconPath: Icons.person_outline_outlined,
-              label: 'Notification',
+              iconPath: Icons.auto_stories_outlined,
+              label: 'Edukasi',
               isActive: _selectedIndex == 2,
               onPressed: () => _onItemTapped(2),
+            ),
+            NavMenu(
+              iconPath: Icons.person_outline_outlined,
+              label: 'Profil',
+              isActive: _selectedIndex == 3,
+              onPressed: () => _onItemTapped(3),
             ),
           ],
         ),

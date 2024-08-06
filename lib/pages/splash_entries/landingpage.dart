@@ -3,10 +3,10 @@ import 'package:reproeduser/pages/route/route_context.dart';
 
 import '../../core/assets/assets.gen.dart';
 import '../models/landing_models.dart';
-import '../widget/buttons.dart';
-import '../widget/landing_content.dart';
-import '../widget/landing_indicator.dart';
-import '../widget/skip_button.dart';
+import '../widgets/buttons.dart';
+import '../widgets/landing_content.dart';
+import '../widgets/landing_indicator.dart';
+import '../widgets/skip_button.dart';
 import '../auth/login.dart';
 
 class LandingPage extends StatefulWidget {

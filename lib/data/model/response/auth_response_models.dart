@@ -1,22 +1,21 @@
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
-class AuthResponseModels {
+class AuthResponseModel {
   final String accessToken;
   final User user;
 
-  AuthResponseModels({
+  AuthResponseModel({
     required this.accessToken,
     required this.user,
   });
 
-  factory AuthResponseModels.fromJson(String str) =>
-      AuthResponseModels.fromMap(json.decode(str));
+  factory AuthResponseModel.fromJson(String str) =>
+      AuthResponseModel.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory AuthResponseModels.fromMap(Map<String, dynamic> json) =>
-      AuthResponseModels(
+  factory AuthResponseModel.fromMap(Map<String, dynamic> json) =>
+      AuthResponseModel(
         accessToken: json["access_token"],
         user: User.fromMap(json["user"]),
       );

@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:reproeduser/core/assets/assets.gen.dart';
 import 'package:reproeduser/pages/home/widgets/header_home.dart';
 import 'package:reproeduser/pages/home/widgets/menu_home.dart';
-import 'package:reproeduser/pages/widget/theme.dart';
+import 'package:reproeduser/pages/route/route_context.dart';
+import 'package:reproeduser/pages/widgets/theme.dart';
+
+import '../edukasi/edukasi_artikel.dart';
+import '../models/edukasi_models.dart';
+import '../models/test_models.dart';
+import '../puberrepro/puberreprogirl/pubertas_index.dart';
+import '../puberrepro/puberreproman/pubertas_index.dart';
+import '../test/test_pemahaman.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -41,13 +49,17 @@ class _HomeState extends State<Home> {
                         color: Colors.teal,
                         imagePath: Assets.images.boy.path,
                         label: 'PuberReproMan',
-                        onPressed: () {},
+                        onPressed: () {
+                          context.pushReplacement(const PuberReproMan());
+                        },
                       ),
                       MenuHome(
                         color: Colors.pink.shade200,
                         imagePath: Assets.images.girl.path,
-                        label: 'PuberReproMan',
-                        onPressed: () {},
+                        label: 'PuberReproGirl',
+                        onPressed: () {
+                          context.pushReplacement(const PuberReprogirl());
+                        },
                       ),
                     ],
                   ),
@@ -59,13 +71,21 @@ class _HomeState extends State<Home> {
                         color: const Color.fromARGB(255, 72, 200, 170),
                         imagePath: Assets.images.wpkuis.path,
                         label: 'Edukasi',
-                        onPressed: () {},
+                        onPressed: () {
+                          context.pushReplacement(EdukasiArtikel(
+                            listEdukasi: listEdukasi,
+                          ));
+                        },
                       ),
                       MenuHome(
                         color: Colors.amber,
                         imagePath: Assets.images.rbkaraktaku.path,
                         label: 'Karaktaku',
-                        onPressed: () {},
+                        onPressed: () {
+                          context.pushReplacement(TestPemahaman(
+                            listTest: listTest,
+                          ));
+                        },
                       ),
                     ],
                   ),

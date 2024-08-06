@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../home/dashboard.dart';
-import '../widget/theme.dart';
+import '../widgets/theme.dart';
 import 'signup.dart';
 
 class Login extends StatefulWidget {
@@ -198,7 +198,7 @@ class _LoginState extends State<Login> {
                                   "Apakah kamu sudah memiliki akun ReproEd?",
                                   textAlign: TextAlign.center,
                                   style:
-                                      regularwhitetext.copyWith(fontSize: 12),
+                                      regularwhitetext.copyWith(fontSize: 10),
                                 ),
                                 TextButton(
                                   onPressed: () {

@@ -12,6 +12,52 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Logout.png
+  AssetGenImage get logout => const AssetGenImage('assets/images/Logout.png');
+
+  /// File path: assets/images/Person.png
+  AssetGenImage get person => const AssetGenImage('assets/images/Person.png');
+
+  /// File path: assets/images/artikel2.png
+  AssetGenImage get artikel2 =>
+      const AssetGenImage('assets/images/artikel2.png');
+
+  /// File path: assets/images/artikel3.png
+  AssetGenImage get artikel3 =>
+      const AssetGenImage('assets/images/artikel3.png');
+
+  /// File path: assets/images/artikel4.png
+  AssetGenImage get artikel4 =>
+      const AssetGenImage('assets/images/artikel4.png');
+
+  /// File path: assets/images/assetpubergirl1.png
+  AssetGenImage get assetpubergirl1 =>
+      const AssetGenImage('assets/images/assetpubergirl1.png');
+
+  /// File path: assets/images/assetpubergirl2.png
+  AssetGenImage get assetpubergirl2 =>
+      const AssetGenImage('assets/images/assetpubergirl2.png');
+
+  /// File path: assets/images/assetpubergirl3.png
+  AssetGenImage get assetpubergirl3 =>
+      const AssetGenImage('assets/images/assetpubergirl3.png');
+
+  /// File path: assets/images/assetpubergirl4.png
+  AssetGenImage get assetpubergirl4 =>
+      const AssetGenImage('assets/images/assetpubergirl4.png');
+
+  /// File path: assets/images/assetpuberman1.png
+  AssetGenImage get assetpuberman1 =>
+      const AssetGenImage('assets/images/assetpuberman1.png');
+
+  /// File path: assets/images/assetpuberman2.png
+  AssetGenImage get assetpuberman2 =>
+      const AssetGenImage('assets/images/assetpuberman2.png');
+
+  /// File path: assets/images/assetpuberman3.png
+  AssetGenImage get assetpuberman3 =>
+      const AssetGenImage('assets/images/assetpuberman3.png');
+
   /// File path: assets/images/boy.png
   AssetGenImage get boy => const AssetGenImage('assets/images/boy.png');
 
@@ -36,6 +82,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
 
+  /// File path: assets/images/ibuhamil.png
+  AssetGenImage get ibuhamil =>
+      const AssetGenImage('assets/images/ibuhamil.png');
+
   /// File path: assets/images/karaktaku.png
   AssetGenImage get karaktaku =>
       const AssetGenImage('assets/images/karaktaku.png');
@@ -43,11 +93,17 @@ class $AssetsImagesGen {
   /// File path: assets/images/kuis.png
   AssetGenImage get kuis => const AssetGenImage('assets/images/kuis.png');
 
+  /// File path: assets/images/latter.png
+  AssetGenImage get latter => const AssetGenImage('assets/images/latter.png');
+
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
   /// File path: assets/images/materi.png
   AssetGenImage get materi => const AssetGenImage('assets/images/materi.png');
+
+  /// File path: assets/images/periksa.png
+  AssetGenImage get periksa => const AssetGenImage('assets/images/periksa.png');
 
   /// File path: assets/images/ppaku.jpg
   AssetGenImage get ppaku => const AssetGenImage('assets/images/ppaku.jpg');
@@ -58,6 +114,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/smp187.jpg
   AssetGenImage get smp187 => const AssetGenImage('assets/images/smp187.jpg');
+
+  /// File path: assets/images/starttest.png
+  AssetGenImage get starttest =>
+      const AssetGenImage('assets/images/starttest.png');
 
   /// File path: assets/images/sub1man.png
   AssetGenImage get sub1man => const AssetGenImage('assets/images/sub1man.png');
@@ -71,6 +131,26 @@ class $AssetsImagesGen {
   /// File path: assets/images/sub4man.png
   AssetGenImage get sub4man => const AssetGenImage('assets/images/sub4man.png');
 
+  /// File path: assets/images/subpubergirl1.png
+  AssetGenImage get subpubergirl1 =>
+      const AssetGenImage('assets/images/subpubergirl1.png');
+
+  /// File path: assets/images/subpubergirl2.png
+  AssetGenImage get subpubergirl2 =>
+      const AssetGenImage('assets/images/subpubergirl2.png');
+
+  /// File path: assets/images/subpubergirl3.png
+  AssetGenImage get subpubergirl3 =>
+      const AssetGenImage('assets/images/subpubergirl3.png');
+
+  /// File path: assets/images/subpubergirl4.png
+  AssetGenImage get subpubergirl4 =>
+      const AssetGenImage('assets/images/subpubergirl4.png');
+
+  /// File path: assets/images/welcomekaraktaku.png
+  AssetGenImage get welcomekaraktaku =>
+      const AssetGenImage('assets/images/welcomekaraktaku.png');
+
   /// File path: assets/images/wlp1.png
   AssetGenImage get wlp1 => const AssetGenImage('assets/images/wlp1.png');
 
@@ -79,6 +159,18 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        logout,
+        person,
+        artikel2,
+        artikel3,
+        artikel4,
+        assetpubergirl1,
+        assetpubergirl2,
+        assetpubergirl3,
+        assetpubergirl4,
+        assetpuberman1,
+        assetpuberman2,
+        assetpuberman3,
         boy,
         boys,
         coin,
@@ -87,17 +179,26 @@ class $AssetsImagesGen {
         esgul,
         girl,
         google,
+        ibuhamil,
         karaktaku,
         kuis,
+        latter,
         logo,
         materi,
+        periksa,
         ppaku,
         rbkaraktaku,
         smp187,
+        starttest,
         sub1man,
         sub2man,
         sub3man,
         sub4man,
+        subpubergirl1,
+        subpubergirl2,
+        subpubergirl3,
+        subpubergirl4,
+        welcomekaraktaku,
         wlp1,
         wpkuis
       ];

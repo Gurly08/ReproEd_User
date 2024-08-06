@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reproeduser/pages/widget/theme.dart';
+import 'package:reproeduser/pages/widgets/theme.dart';
 
 class NavMenu extends StatelessWidget {
   final IconData iconPath;
