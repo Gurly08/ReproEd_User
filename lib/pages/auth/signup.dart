@@ -21,10 +21,20 @@ class _SignupState extends State<Signup> {
   bool _obscureText = true;
 
   String? valueChoose;
-  List<String> listItem = ['Kelas 7', 'Kelas 8', 'Kelas 9'];
+  final List<String> listItem = ['Kelas 7', 'Kelas 8', 'Kelas 9'];
+  final Map<String, String> kelasMapping = {
+    'Kelas 7': 'kelas_7',
+    'Kelas 8': 'kelas_8',
+    'Kelas 9': 'kelas_9'
+  };
+
   Color? lakiLakiColor = Colors.white;
   Color? perempuanColor = Colors.white;
   String? jenisKelamin;
+  final Map<String, String> genderMapping = {
+    'Laki-laki': 'laki_laki',
+    'Perempuan': 'perempuan'
+  };
 
   void selectLakiLaki() {
     setState(() {
@@ -195,16 +205,16 @@ class _SignupState extends State<Signup> {
                         onPressed: () {
                           print('Nama: ${namaController.text}');
                           print('Email: ${emailController.text}');
-                          print('Kelas: $valueChoose');
+                          print('Kelas: ${kelasMapping[valueChoose]}');
                           print('Umur: ${umurController.text}');
-                          print('Jenis Kelamin: $jenisKelamin');
+                          print('Jenis Kelamin: ${genderMapping[jenisKelamin]}');
                           print('Password: ${passwordController.text}');
                           final dataRequest = RegisterRequestModels(
                             name: namaController.text,
                             email: emailController.text,
-                            kelas: valueChoose!,
+                            kelas: kelasMapping[valueChoose]!,
                             umur: umurController.text,
-                            jenisKelamin: jenisKelamin ?? '',
+                            jenisKelamin: genderMapping[jenisKelamin]!,
                             password: passwordController.text,
                           );
                           context
