@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:reproeduser/core/assets/assets.gen.dart';
-import 'package:reproeduser/pages/home/home.dart';
+import 'package:reproeduser/pages/home/dashboard.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
-import 'package:reproeduser/pages/test/start_test.dart';
-import 'package:reproeduser/pages/test/widgets/info_karaktaku.dart';
+import 'package:reproeduser/pages/testpemahaman/start_test.dart';
+import 'package:reproeduser/pages/testpemahaman/widgets/info_karaktaku.dart';
 
 import '../models/test_models.dart';
 import '../widgets/theme.dart';
@@ -38,7 +38,7 @@ class TestPemahaman extends StatelessWidget {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => const Home(),
+                builder: (context) => const Dashboard(),
               ),
             );
           },
@@ -60,7 +60,7 @@ class TestPemahaman extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Selamat Datang \n Test \n Pemahaman',
+                    'Selamat Datang \nTest \nPemahaman',
                     style: mediumWhiteTextStyle.copyWith(fontSize: 20),
                   ),
                   Image.asset(
@@ -78,12 +78,13 @@ class TestPemahaman extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (context, index) => InkWell(
                   onTap: () {
-                    context.pushReplacement(
-                      StartTest(
-                        selectedTest: listTest[index],
-                        listTest: listTest,
-                      ),
-                    );
+                    // context.pushReplacement(
+                    //   StartTest(
+                    //     data: widget.data,
+                    //     selectedTest: listTest[index],
+                    //     listTest: listTest,
+                    //   ),
+                    // );
                   },
                   child: Card(
                     color: const Color(0xffFFDD88),

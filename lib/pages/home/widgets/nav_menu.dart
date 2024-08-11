@@ -35,7 +35,7 @@ class NavMenu extends StatelessWidget {
             if (isActive)
               Text(label,
                   style: mediumPURPLETextStyle.copyWith(
-                    color: Colors.deepPurple,
+                    color: Colors.deepPurple, fontSize: 12.5,
                   )),
           ],
         ),

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'pages/auth/bloc/bloc/register_bloc.dart';
+import 'package:reproeduser/data/datasource/edukasi_datasource_remote.dart';
+import 'package:reproeduser/pages/auth/bloc/login/login_bloc.dart';
+import 'package:reproeduser/pages/bloc/edukasi/edukasi_bloc.dart';
+import 'pages/auth/bloc/logout/logout_bloc.dart';
+import 'pages/auth/bloc/register/register_bloc.dart';
 import 'pages/splash_entries/splash.dart';
 
 void main() {
@@ -11,8 +15,21 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => RegisterBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => RegisterBloc(),
+        ),
+        BlocProvider(
+          create: (context) => LogoutBloc(),
+        ),
+        BlocProvider(
+          create: (context) => LoginBloc(),
+        ),
+        BlocProvider(
+          create: (context) => EdukasiBloc(EdukasiRemoteDatasource()),
+        ),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(

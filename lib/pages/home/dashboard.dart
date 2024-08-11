@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
+import '../../data/model/response/edukasi_response_models.dart'; 
 import '../edukasi/edukasi_artikel.dart';
-import '../models/edukasi_models.dart';
 import '../models/test_models.dart';
 import '../profil/profil.dart';
-import '../test/test_pemahaman.dart';
+import '../testpemahaman/test_pemahaman.dart';
 import 'home.dart';
 import 'widgets/nav_menu.dart';
 
@@ -17,20 +16,28 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
-  final List<Widget> _pages = [
-    const Home(),
-    TestPemahaman(listTest: listTest),
-    EdukasiArtikel(listEdukasi: listEdukasi),
-    const Profil(),
-  ];
+
+  // Inisialisasi listEdukasi dan listTest dengan data kosong atau data aktual
+  final List<Edukasi> listEdukasi = []; // Pastikan data ini terisi sebelum digunakan
+  // final List<Test> listTest = []; // Pastikan data ini terisi sebelum digunakan
+
+  late final List<Widget> _pages;
+
+  @override
+  void initState() {
+    super.initState();
+    // Inisialisasi _pages setelah listEdukasi dan listTest terdefinisi
+    _pages = [
+      const Home(),
+      TestPemahaman(listTest: listTest),
+      EdukasiArtikel(listEdukasi: listEdukasi),
+      const Profil(),
+    ];
+  }
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      // ignore: avoid_print
-      print('Index tapped: $index');
-      // ignore: avoid_print
-      print('Pages length: ${_pages.length}');
     });
   }
 

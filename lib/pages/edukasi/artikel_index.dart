@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:reproeduser/data/model/response/edukasi_response_models.dart';
 import 'package:reproeduser/pages/edukasi/edukasi_artikel.dart';
-import 'package:reproeduser/pages/models/edukasi_models.dart';
 import '../../core/assets/assets.gen.dart';
 import '../widgets/theme.dart';
 
@@ -21,12 +21,39 @@ class ArtikelDS extends StatefulWidget {
 class _ArtikelDSState extends State<ArtikelDS> {
   @override
   Widget build(BuildContext context) {
+    // Validasi data sebelum render UI
+    // ignore: unnecessary_null_comparison
+    if (widget.listEdukasi.isEmpty || widget.selectedEdukasi == null) {
+      return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          centerTitle: true,
+          title: const Text(
+            'Data Tidak Tersedia',
+            style: TextStyle(color: Colors.black, fontSize: 15),
+          ),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            ),
+          ),
+        ),
+        body: const Center(
+          child: Text('Data edukasi tidak tersedia.'),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
-          widget.selectedEdukasi.name,
+          widget.selectedEdukasi.judulEdukasi,
           style: semiboldBlackTextStyle.copyWith(fontSize: 15),
         ),
         actions: [
@@ -74,7 +101,7 @@ class _ArtikelDSState extends State<ArtikelDS> {
                       Expanded(
                         child: Text(
                           style: semiboldBlackTextStyle.copyWith(fontSize: 15),
-                          'Artikel ${widget.selectedEdukasi.name} \n Selamat Membaca ;)',
+                          'Artikel ${widget.selectedEdukasi.judulEdukasi} \n Selamat Membaca ;)',
                         ),
                       ),
                     ],
@@ -93,9 +120,9 @@ class _ArtikelDSState extends State<ArtikelDS> {
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  'Artikel \nPertama \nEdukasi',
+                  widget.selectedEdukasi.judulEdukasi,
+                  maxLines: 3,
                   style: mediumPURPLETextStyle.copyWith(fontSize: 18),
-                  textAlign: TextAlign.justify,
                 ),
               ),
               const Divider(),
@@ -103,13 +130,13 @@ class _ArtikelDSState extends State<ArtikelDS> {
               Image.asset(Assets.images.dna.path),
               const SizedBox(height: 20),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con',
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con',
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 15),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con',
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con',
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),
@@ -117,7 +144,7 @@ class _ArtikelDSState extends State<ArtikelDS> {
               Image.asset(Assets.images.assetpubergirl2.path),
               const SizedBox(height: 20),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con',
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con',
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),
@@ -125,7 +152,7 @@ class _ArtikelDSState extends State<ArtikelDS> {
               Image.asset(Assets.images.assetpubergirl3.path),
               const SizedBox(height: 20),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con',
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con',
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),

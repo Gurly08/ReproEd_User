@@ -4,7 +4,7 @@ import 'package:reproeduser/pages/route/route_context.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
 import '../home/home.dart';
-import '../models/edukasi_models.dart';
+import '../../data/model/response/edukasi_response_models.dart'; 
 import '../widgets/theme.dart';
 
 class VideoScreen extends StatefulWidget {
@@ -16,6 +16,7 @@ class VideoScreen extends StatefulWidget {
 }
 
 class _VideoScreenState extends State<VideoScreen> {
+  final List<Edukasi> listEdukasi = [];
   late VideoPlayerController _videoPlayerController;
   ChewieController? _chewieController;
 

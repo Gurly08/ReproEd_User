@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reproeduser/data/datasource/auth_datasource_local.dart';
+import 'package:reproeduser/data/model/request/login_request_models.dart';
+import 'package:reproeduser/pages/auth/bloc/login/login_bloc.dart';
+import 'package:reproeduser/pages/route/route_context.dart';
 import '../home/dashboard.dart';
 import '../widgets/theme.dart';
 import 'signup.dart';
@@ -14,6 +19,13 @@ class _LoginState extends State<Login> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool _obscureText = true;
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +109,7 @@ class _LoginState extends State<Login> {
                                 ],
                               ),
                               child: TextField(
+                                keyboardType: TextInputType.emailAddress,
                                 controller: emailController,
                                 decoration: InputDecoration(
                                   hintText: 'Masukan email',
@@ -169,26 +182,66 @@ class _LoginState extends State<Login> {
                             ),
 
                             const SizedBox(height: 35),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const Dashboard()));
+                            BlocConsumer<LoginBloc, LoginState>(
+                              listener: (context, state) {
+                                state.maybeWhen(
+                                  orElse: (){},
+                                  succeess: (data){ // Corrected here from succeess to success
+                                    print('Login berhasil: ${data.user}');
+                                    //simpan ke autlocaldatasource
+                                    AuthLocalDatasource().saveAuthData(data);
+                                    //snackbar
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        content: Text('Yeay Login Berhasil'),
+                                        backgroundColor: Color.fromARGB(255, 29, 182, 167),
+                                      )
+                                    );
+                                    context.pushReplacement(const Dashboard());
+                                  },
+                                  error: (message){
+                                    print('Login gagal: $message');
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(message),
+                                        backgroundColor: Colors.redAccent,
+                                      )
+                                    );
+                                  }
+                                );
                               },
-                              style: ElevatedButton.styleFrom(
-                                  shape: const StadiumBorder(),
-                                  elevation: 8,
-                                  shadowColor: Colors.black,
-                                  backgroundColor: Colors.white,
-                                  minimumSize: const Size.fromHeight(45)),
-                              child: Text(
-                                "Masuk",
-                                textAlign: TextAlign.center,
-                                style: mediumPURPLETextStyle.copyWith(
-                                    fontSize: 18),
-                              ),
+                              builder: (context, state) {
+                                return state.maybeWhen(
+                                  orElse: () => ElevatedButton(
+                                    onPressed: () {
+                                      print('Email: ${emailController.text}');
+                                      print('Password: ${passwordController.text}');
+                                      final requestModel = LoginRequestModel(
+                                        email: emailController.text,
+                                        password: passwordController.text,
+                                      );
+                                      context
+                                          .read<LoginBloc>()
+                                          .add(LoginEvent.login(requestModel));
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                        shape: const StadiumBorder(),
+                                        elevation: 8,
+                                        shadowColor: Colors.black,
+                                        backgroundColor: Colors.white,
+                                        minimumSize: const Size.fromHeight(45)),
+                                    child: Text(
+                                      "Masuk",
+                                      textAlign: TextAlign.center,
+                                      style: mediumPURPLETextStyle.copyWith(
+                                          fontSize: 18),
+                                    ),
+                                  ),
+                                  loading: () => const Center(
+                                    child: CircularProgressIndicator(),
+                                  ),
+                                );
+                              },
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,

@@ -5,12 +5,13 @@ import 'package:reproeduser/pages/home/widgets/menu_home.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 import 'package:reproeduser/pages/widgets/theme.dart';
 
+// Ubah import ini untuk menggunakan model yang benar
+import '../../data/model/response/edukasi_response_models.dart'; 
 import '../edukasi/edukasi_artikel.dart';
-import '../models/edukasi_models.dart';
 import '../models/test_models.dart';
 import '../puberrepro/puberreprogirl/pubertas_index.dart';
 import '../puberrepro/puberreproman/pubertas_index.dart';
-import '../test/test_pemahaman.dart';
+import '../testpemahaman/test_pemahaman.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -20,6 +21,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final List<Edukasi> listEdukasi = []; // Inisialisasi listEdukasi
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +31,7 @@ class _HomeState extends State<Home> {
           children: [
             const HeaderHome(),
             Padding(
-              padding: const EdgeInsets.all(30),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -53,6 +56,7 @@ class _HomeState extends State<Home> {
                           context.pushReplacement(const PuberReproMan());
                         },
                       ),
+                      const SizedBox(width: 8),
                       MenuHome(
                         color: Colors.pink.shade200,
                         imagePath: Assets.images.girl.path,

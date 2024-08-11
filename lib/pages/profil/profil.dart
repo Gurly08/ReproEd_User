@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reproeduser/pages/auth/bloc/logout/logout_bloc.dart';
 import 'package:reproeduser/pages/auth/login.dart';
+import 'package:reproeduser/pages/route/route_context.dart';
 
+import '../../data/datasource/auth_datasource_local.dart';
+import '../../data/model/response/auth_response_models.dart';
 import '../models/layanan_models.dart';
 import '../widgets/theme.dart';
 import 'edit_profil.dart';
@@ -30,10 +35,20 @@ class Profil extends StatelessWidget {
                             'assets/images/ppaku.jpg',
                           )),
                       const SizedBox(height: 25),
-                      Text(
-                        'Bagas Djunaedi',
-                        style: semiboldwhitetext.copyWith(fontSize: 18),
-                      ),
+                      //untuk menmapilkan username yang sesuai dengan nama user yang regis atau login
+                    FutureBuilder<AuthResponseModel>(
+                      future: AuthLocalDatasource().getAuthData(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.user.name,
+                            style: mediumWhiteTextStyle.copyWith(fontSize: 20),
+                          );
+                        } else {
+                          return const SizedBox();
+                        }
+                      }
+                    ),
                       const SizedBox(height: 8),
                       Text(
                         'Siswa Kelas 9',
@@ -84,20 +99,18 @@ class Profil extends StatelessWidget {
                               layanan: Layanan(
                                 id: 5,
                                 imageUrl: 'assets/images/latter.png',
-                                name: 'Pengajuan Kegiatan',
+                                name: 'Tentang Aplikasi',
                                 color: Colors.blue[300],
-                                jumlah: 8,
                               ),
                             ),
                           ),
                           const SizedBox(height: 18),
                           InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const Login(),
-                                  ));
+                              //proses logout
+                              context.read<LogoutBloc>().add(const LogoutEvent.logout());
+                              AuthLocalDatasource().removeAuthData();
+                              context.pushReplacement(const Login());
                             },
                             child: CardProfil(
                               layanan: Layanan(

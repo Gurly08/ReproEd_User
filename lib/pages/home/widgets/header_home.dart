@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:reproeduser/data/datasource/auth_datasource_local.dart';
+import 'package:reproeduser/data/model/response/auth_response_models.dart';
+import 'package:reproeduser/pages/widgets/theme.dart';
 
 class HeaderHome extends StatefulWidget {
   const HeaderHome({super.key});
@@ -33,24 +36,27 @@ class _HeaderHomeState extends State<HeaderHome> {
               const SizedBox(width: 16.0),
               SizedBox(
                 width: MediaQuery.of(context).size.width - 208.0,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Bagas Djunaedi',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    //untuk menmapilkan username yang sesuai dengan nama user yang regis atau login
+                    FutureBuilder<AuthResponseModel>(
+                      future: AuthLocalDatasource().getAuthData(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.user.name,
+                            style: mediumWhiteTextStyle.copyWith(fontSize: 20),
+                          );
+                        } else {
+                          return const SizedBox();
+                        }
+                      }
                     ),
+                    //----------------------------------------------------------
                     Text(
                       'Holla... Selamat Kembali',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: regularwhitetext.copyWith(fontSize: 12,),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ],

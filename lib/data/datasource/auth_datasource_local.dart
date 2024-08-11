@@ -12,13 +12,9 @@ class AuthLocalDatasource {
     await pref.remove('auth_data');
   }
 
-  Future<AuthResponseModel?> getAuthData() async {
+  Future<AuthResponseModel> getAuthData() async {
     final pref = await SharedPreferences.getInstance();
     final authData = pref.getString('auth_data');
-    if (authData != null) {
-      return AuthResponseModel.fromJson(authData);
-    } else {
-      return null;
-    }
+      return AuthResponseModel.fromJson(authData!);
   }
 }

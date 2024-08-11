@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reproeduser/data/datasource/auth_datasource_local.dart';
 import 'package:reproeduser/data/model/request/register_request_models.dart';
-import 'package:reproeduser/pages/auth/bloc/bloc/register_bloc.dart';
+import 'package:reproeduser/pages/auth/bloc/register/register_bloc.dart';
 import 'package:reproeduser/pages/home/dashboard.dart';
 import '../widgets/buttons.dart';
 import '../widgets/theme.dart';
@@ -174,6 +175,7 @@ class _SignupState extends State<Signup> {
                     orElse: () {},
                     success: (authResponseModel) {
                       print('Registrasi berhasil: ${authResponseModel.user}');
+                      AuthLocalDatasource().saveAuthData(authResponseModel);
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text('Selamat akun kamu sudah dibuat'),

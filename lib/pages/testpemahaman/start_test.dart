@@ -2,20 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:reproeduser/core/assets/assets.gen.dart';
 import 'package:reproeduser/pages/models/test_models.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
-import 'package:reproeduser/pages/test/answer_test.dart';
-import 'package:reproeduser/pages/test/test_pemahaman.dart';
+import 'package:reproeduser/pages/testpemahaman/answer_test.dart';
+import 'package:reproeduser/pages/testpemahaman/models/test_pemahaman_model.dart';
+import 'package:reproeduser/pages/testpemahaman/test_pemahaman.dart';
 
 import '../widgets/theme.dart';
 
-class StartTest extends StatelessWidget {
+class StartTest extends StatefulWidget {
   final Test selectedTest;
   final List<Test> listTest;
+  final TestModel data;
   const StartTest({
     super.key,
     required this.selectedTest,
     required this.listTest,
+    required this.data,
   });
 
+  @override
+  State<StartTest> createState() => _StartTestState();
+}
+
+class _StartTestState extends State<StartTest> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +33,7 @@ class StartTest extends StatelessWidget {
           backgroundColor: Colors.transparent,
           centerTitle: true,
           title: Text(
-            selectedTest.name,
+            widget.selectedTest.name,
             style: semiboldwhitetext.copyWith(fontSize: 15),
           ),
           actions: [
@@ -39,13 +47,14 @@ class StartTest extends StatelessWidget {
           ],
           leading: IconButton(
             onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => TestPemahaman(
-                      listTest: listTest), // Mengirimkan listMateri
-                ),
-              );
+              // Navigator.pushReplacement(
+              //   context,
+              // //   MaterialPageRoute(
+              // //     builder: (context) => TestPemahaman(
+              // //       data: widget.data,
+              // //         listTest: widget.listTest), // Mengirimkan listMateri
+              // //   ),
+              // // );
             },
             icon: const Icon(
               Icons.arrow_back_ios,
@@ -68,7 +77,7 @@ class StartTest extends StatelessWidget {
                           fontSize: 15, color: Colors.white60),
                     ),
                     Text(
-                      'Soal ${selectedTest.name}',
+                      'Soal ${widget.selectedTest.name}',
                       style: boldwhitetext.copyWith(fontSize: 22),
                     ),
                     const SizedBox(height: 10),
@@ -106,7 +115,7 @@ class StartTest extends StatelessWidget {
                           ),
                           const SizedBox(height: 12),
                           Text(
-                            'Test Pemahaman \n${selectedTest.name}',
+                            'Test Pemahaman \n${widget.selectedTest.name}',
                             style:
                                 semiboldPURPLETextStyle.copyWith(fontSize: 25),
                           ),
@@ -135,7 +144,7 @@ class StartTest extends StatelessWidget {
                           Align(
                             child: ElevatedButton(
                               onPressed: () {
-                                context.pushReplacement(const AnswerTest());
+                                context.pushReplacement(QuizStartPage(data: widget.data));
                               },
                               style: ElevatedButton.styleFrom(
                                   shape: const StadiumBorder(),
