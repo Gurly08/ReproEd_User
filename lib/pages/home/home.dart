@@ -8,10 +8,9 @@ import 'package:reproeduser/pages/widgets/theme.dart';
 // Ubah import ini untuk menggunakan model yang benar
 import '../../data/model/response/edukasi_response_models.dart'; 
 import '../edukasi/edukasi_artikel.dart';
-import '../models/test_models.dart';
 import '../puberrepro/puberreprogirl/pubertas_index.dart';
 import '../puberrepro/puberreproman/pubertas_index.dart';
-import '../testpemahaman/test_pemahaman.dart';
+import '../testpemahaman/soal_list.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -86,9 +85,7 @@ class _HomeState extends State<Home> {
                         imagePath: Assets.images.rbkaraktaku.path,
                         label: 'Karaktaku',
                         onPressed: () {
-                          context.pushReplacement(TestPemahaman(
-                            listTest: listTest,
-                          ));
+                          context.pushReplacement(const TestPemahaman());
                         },
                       ),
                     ],

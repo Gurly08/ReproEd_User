@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../data/model/response/edukasi_response_models.dart'; 
 import '../edukasi/edukasi_artikel.dart';
-import '../models/test_models.dart';
 import '../profil/profil.dart';
-import '../testpemahaman/test_pemahaman.dart';
+import '../testpemahaman/soal_list.dart';
 import 'home.dart';
 import 'widgets/nav_menu.dart';
 
@@ -29,7 +28,7 @@ class _DashboardState extends State<Dashboard> {
     // Inisialisasi _pages setelah listEdukasi dan listTest terdefinisi
     _pages = [
       const Home(),
-      TestPemahaman(listTest: listTest),
+      const TestPemahaman(),
       EdukasiArtikel(listEdukasi: listEdukasi),
       const Profil(),
     ];

@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:reproeduser/core/assets/assets.gen.dart';
-import 'package:reproeduser/pages/models/test_models.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 import 'package:reproeduser/pages/testpemahaman/answer_test.dart';
 import 'package:reproeduser/pages/testpemahaman/models/test_pemahaman_model.dart';
-import 'package:reproeduser/pages/testpemahaman/test_pemahaman.dart';
+import 'package:reproeduser/pages/testpemahaman/soal_list.dart';
 
 import '../widgets/theme.dart';
 
 class StartTest extends StatefulWidget {
-  final Test selectedTest;
-  final List<Test> listTest;
-  final TestModel data;
+
+  final QuizModel data;
+
   const StartTest({
     super.key,
-    required this.selectedTest,
-    required this.listTest,
     required this.data,
   });
 
@@ -33,7 +30,7 @@ class _StartTestState extends State<StartTest> {
           backgroundColor: Colors.transparent,
           centerTitle: true,
           title: Text(
-            widget.selectedTest.name,
+            widget.data.name,
             style: semiboldwhitetext.copyWith(fontSize: 15),
           ),
           actions: [
@@ -47,14 +44,7 @@ class _StartTestState extends State<StartTest> {
           ],
           leading: IconButton(
             onPressed: () {
-              // Navigator.pushReplacement(
-              //   context,
-              // //   MaterialPageRoute(
-              // //     builder: (context) => TestPemahaman(
-              // //       data: widget.data,
-              // //         listTest: widget.listTest), // Mengirimkan listMateri
-              // //   ),
-              // // );
+              context.pushReplacement(const TestPemahaman());
             },
             icon: const Icon(
               Icons.arrow_back_ios,
@@ -67,7 +57,7 @@ class _StartTestState extends State<StartTest> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 18, right: 18),
+                padding: const EdgeInsets.only(left: 18, right: 18, ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -77,7 +67,7 @@ class _StartTestState extends State<StartTest> {
                           fontSize: 15, color: Colors.white60),
                     ),
                     Text(
-                      'Soal ${widget.selectedTest.name}',
+                      'Soal ${widget.data.name}',
                       style: boldwhitetext.copyWith(fontSize: 22),
                     ),
                     const SizedBox(height: 10),
@@ -115,7 +105,7 @@ class _StartTestState extends State<StartTest> {
                           ),
                           const SizedBox(height: 12),
                           Text(
-                            'Test Pemahaman \n${widget.selectedTest.name}',
+                            'Test Pemahaman \n${widget.data.name}',
                             style:
                                 semiboldPURPLETextStyle.copyWith(fontSize: 25),
                           ),
@@ -140,7 +130,7 @@ class _StartTestState extends State<StartTest> {
                                   mediumWhiteTextStyle.copyWith(fontSize: 25),
                             )),
                           ),
-                          const SizedBox(height: 25 ),
+                          const SizedBox(height: 18),
                           Align(
                             child: ElevatedButton(
                               onPressed: () {
@@ -159,7 +149,8 @@ class _StartTestState extends State<StartTest> {
                                     mediumWhiteTextStyle.copyWith(fontSize: 18),
                               ),
                             ),
-                          )
+                          ),
+                          const SizedBox(height: 18),
                         ],
                       ),
                     ),

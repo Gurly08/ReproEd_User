@@ -30,8 +30,7 @@ class QuizMultipleChoice extends StatelessWidget {
             ],
           ),
           child: const Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan sem ut ligula tempus, a vehicula dui ullamcorper. Nunc eget lacinia ',
-            textAlign: TextAlign.justify,
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan sem ut ligula tempus, a vehicula dui ullamcorper. Nunc eget lacinia',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w700,

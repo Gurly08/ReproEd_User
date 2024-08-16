@@ -2,15 +2,13 @@
 
 import 'test_type_model.dart';
 
-class TestModel {
-  final String image;
+class QuizModel {
   final String name;
   final String type;
   final String description;
   final int duration;
 
-  TestModel({
-    required this.image,
+  QuizModel({
     required this.name,
     required this.type,
     required this.description,

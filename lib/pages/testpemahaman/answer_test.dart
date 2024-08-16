@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:reproeduser/core/extentions/build_context_ext.dart';
 // import 'package:reproeduser/core/extentions/build_context_ext.dart';
 // import 'package:reproeduser/pages/route/route_context.dart';
 import 'package:reproeduser/pages/testpemahaman/models/test_pemahaman_model.dart';
 import '../widgets/color.dart';
 import '../widgets/custom_scaffold.dart';
+import 'finish_test.dart';
 import 'widgets/countdown.dart';
 import 'widgets/test_multiple_choice.dart';
 
 class QuizStartPage extends StatefulWidget {
-  final TestModel data;
+  final QuizModel data;
 
   const QuizStartPage({
     super.key,
@@ -27,23 +29,23 @@ class _QuizStartPageState extends State<QuizStartPage> {
     return CustomScaffold(
       appBarTitle: Text(widget.data.name),
       actions: [
-        const Icon(Icons.punch_clock, color: Colors.pink, weight: 24),
+        const Icon(Icons.punch_clock, color: Colors.white, weight: 24),
         const SizedBox(width: 8.0),
         CountdownTimer(
           duration: widget.data.duration,
           onTimerCompletion: (timeRemaining) {
-            // context.pushReplacement(QuizFinishPage(
-            //   data: widget.data,
-            //   timeRemaining: timeRemaining,
-            // ));
+            context.pushReplacement(FinishTest(
+              data: widget.data,
+              timeRemaining: timeRemaining,
+            ));
           },
         ),
         IconButton(
             onPressed: () {
-              // context.pushReplacement(QuizFinishPage(
-              //   data: widget.data,
-              //   timeRemaining: 0,
-              // ));
+              context.pushReplacement(FinishTest(
+                data: widget.data,
+                timeRemaining: 0,
+              ));
             },
             icon: const Icon(
               Icons.done,
