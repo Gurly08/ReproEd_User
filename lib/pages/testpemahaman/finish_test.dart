@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reproeduser/core/extentions/build_context_ext.dart';
+import 'package:reproeduser/pages/home/dashboard.dart';
 import 'package:reproeduser/pages/testpemahaman/result_test.dart';
 import '../widgets/buttons.dart';
 import '../widgets/color.dart';
@@ -50,7 +51,7 @@ class _FinishTestState extends State<FinishTest> {
               ),
               const SizedBox(height: 42.0),
               Button.filled(
-                onPressed: () => context.popToRoot(),
+                onPressed: () => context.pushReplacement(const Dashboard()),
                 label: 'Kembali ke Beranda',
                 color: AppColors.white,
                 textColor: AppColors.primary,

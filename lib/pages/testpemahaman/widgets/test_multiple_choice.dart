@@ -1,82 +1,100 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reproeduser/pages/testpemahaman/bloc/daftarsoal/daftar_soal_bloc.dart';
+import 'package:reproeduser/pages/testpemahaman/bloc/hitungnilai/hitung_nilai_bloc.dart';
+import 'package:reproeduser/pages/widgets/theme.dart';
 import '../../widgets/buttons.dart';
 import '../../widgets/color.dart';
 import 'answer_choice.dart';
 
-class QuizMultipleChoice extends StatelessWidget {
-  const QuizMultipleChoice({super.key});
+class QuizMultipleChoice extends StatefulWidget {
+  final String kategori;
+  const QuizMultipleChoice({
+    super.key,
+    required this.kategori,
+    });
 
   @override
-  Widget build(BuildContext context) {
-    final ValueNotifier<String> selectedAnswer = ValueNotifier("");
+  State<QuizMultipleChoice> createState() => _QuizMultipleChoiceState();
+}
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: const EdgeInsets.all(24.0),
-          decoration: ShapeDecoration(
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            shadows: [
-              BoxShadow(
-                color: AppColors.black.withOpacity(0.14),
-                blurRadius: 17,
-                offset: const Offset(0, 8),
-                spreadRadius: 0,
-              )
-            ],
-          ),
-          child: const Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan sem ut ligula tempus, a vehicula dui ullamcorper. Nunc eget lacinia',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ),
-        const SizedBox(height: 34.0),
-        ValueListenableBuilder(
-          valueListenable: selectedAnswer,
-          builder: (context, state, _) => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AnswerChoices(
-                label: 'Lorem ipsum 1',
-                isSelected: state == 'Lorem ipsum 1',
-                onChanged: (value) => selectedAnswer.value = value,
-              ),
-              const SizedBox(height: 16.0),
-              AnswerChoices(
-                label: 'Lorem ipsum 2',
-                isSelected: state == 'Lorem ipsum 2',
-                onChanged: (value) => selectedAnswer.value = value,
-              ),
-              const SizedBox(height: 16.0),
-              AnswerChoices(
-                label: 'Lorem ipsum 3',
-                isSelected: state == 'Lorem ipsum 3',
-                onChanged: (value) => selectedAnswer.value = value,
-                answerCorrection: AnswerCorrection.none,
-              ),
-              const SizedBox(height: 16.0),
-              AnswerChoices(
-                label: 'Lorem ipsum 4',
-                isSelected: state == 'Lorem ipsum 4',
-                onChanged: (value) => selectedAnswer.value = value,
-                answerCorrection: AnswerCorrection.selected,
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 38.0),
-        Button.filled(
-          onPressed: () {},
-          label: 'Selanjutnya',
-        ),
-      ],
+class _QuizMultipleChoiceState extends State<QuizMultipleChoice> {
+  @override
+  Widget build(BuildContext context) {
+    // final ValueNotifier<String> selectedAnswer = ValueNotifier("");//untuk dummy
+    return BlocBuilder<DaftarSoalBloc, DaftarSoalState>(
+      builder: (context, state) {
+        return state.maybeWhen(
+          orElse: (){
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          },
+          success: (data, index, isNext){
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(24.0),
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    shadows: [
+                      BoxShadow(
+                        color: AppColors.black.withOpacity(0.14),
+                        blurRadius: 17,
+                        offset: const Offset(0, 8),
+                        spreadRadius: 0,
+                      )
+                    ],
+                  ),
+                  child: Text(
+                    data[index].pertanyaan,
+                    style: boldBlackTextStyle.copyWith(fontSize: 20),
+                  ),
+                ),
+                const SizedBox(height: 34.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AnswerChoices(
+                      label: data[index].jawabanA,
+                      isSelected: false,
+                      onChanged: (value) {},
+                    ),
+                    const SizedBox(height: 16.0),
+                    AnswerChoices(
+                      label: data[index].jawabanB,
+                      isSelected: false,
+                      onChanged: (value) {},
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 38.0),
+                isNext
+                ? Button.filled(
+                  onPressed: () {
+                    context
+                        .read<DaftarSoalBloc>()
+                        .add(const DaftarSoalEvent.nextSoal());
+                  },
+                  label: 'Selanjutnya',
+                )
+                : Button.filled(
+                  onPressed: () {
+                    context
+                    .read<HitungNilaiBloc>()
+                    .add(const HitungNilaiEvent.getNilai('kategori'));
+                  },
+                  label: 'Selesai',
+                ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 }

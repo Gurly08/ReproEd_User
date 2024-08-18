@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reproeduser/core/assets/assets.gen.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 import 'package:reproeduser/pages/testpemahaman/answer_test.dart';
+import 'package:reproeduser/pages/testpemahaman/bloc/ujianbykategori/ujian_by_kategori_bloc.dart';
 import 'package:reproeduser/pages/testpemahaman/models/test_pemahaman_model.dart';
 import 'package:reproeduser/pages/testpemahaman/soal_list.dart';
 
@@ -21,6 +23,15 @@ class StartTest extends StatefulWidget {
 }
 
 class _StartTestState extends State<StartTest> {
+
+  @override
+  void initState() {
+    context.read<UjianByKategoriBloc>().add(
+      UjianByKategoriEvent.getUjianByKategori(widget.data.kategori),
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,15 +44,6 @@ class _StartTestState extends State<StartTest> {
             widget.data.name,
             style: semiboldwhitetext.copyWith(fontSize: 15),
           ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.notifications,
-                color: Colors.white,
-              ),
-            ),
-          ],
           leading: IconButton(
             onPressed: () {
               context.pushReplacement(const TestPemahaman());
@@ -111,7 +113,7 @@ class _StartTestState extends State<StartTest> {
                           ),
                           const SizedBox(height: 18),
                           Text(
-                            'Soal ini berisikan sebanyak 20 soal yang akan kamu kerjakan jadi kerjakan dengan terloiti',
+                            'Soal ini berisikan sebanyak 20 soal yang akan kamu kerjakan jadi kerjakan dengan terliti',
                             style: regularBlackTextStyle.copyWith(fontSize: 12),
                           ),
                           const SizedBox(height: 15),
@@ -143,7 +145,7 @@ class _StartTestState extends State<StartTest> {
                                   backgroundColor: Colors.purple,
                                   minimumSize: const Size.fromHeight(45)),
                               child: Text(
-                                "Masuk",
+                                "Mulai",
                                 textAlign: TextAlign.center,
                                 style:
                                     mediumWhiteTextStyle.copyWith(fontSize: 18),

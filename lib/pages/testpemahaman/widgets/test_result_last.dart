@@ -15,16 +15,16 @@ class TestResultLast extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Hasil Tes Terakhir',
           style: TextStyle(
             fontSize: 21,
             fontWeight: FontWeight.w500,
           ),
         ),
-        SizedBox(height: 16.0),
+        const SizedBox(height: 16.0),
         Container(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
@@ -34,7 +34,7 @@ class TestResultLast extends StatelessWidget {
               BoxShadow(
                 color: AppColors.black.withOpacity(0.14),
                 blurRadius: 17,
-                offset: Offset(0, 8),
+                offset: const Offset(0, 8),
                 spreadRadius: 0,
               ),
             ],
@@ -50,9 +50,9 @@ class TestResultLast extends StatelessWidget {
                       'Semua Tes',
                       style: mediumBlackTextStyle.copyWith(fontSize: 20),
                     ),
-                    SizedBox(height: 18.0),
+                    const SizedBox(height: 18.0),
                     ResultValue.correct(correct),
-                    SizedBox(height: 18.0),
+                    const SizedBox(height: 18.0),
                     ResultValue.wrong(wrong),
                   ],
                 ),

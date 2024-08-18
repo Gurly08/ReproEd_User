@@ -18,25 +18,28 @@ class ResultTest extends StatelessWidget {
     const paddingHorizontal =EdgeInsets.symmetric(horizontal: paddingHorizontalSize);
     final List<QuizModel> datas = [
       QuizModel(
-        name: 'Kesehatan Reproduksi', 
-        type: 'Multiple Choice', 
-        description: 
-        'Soal ini menguji pengetahuan tentang kesehatan reproduksi, termasuk fungsi tubuh, pencegahan penyakit, dan perencanaan keluarga.', 
+        name: 'Kesehatan Reproduksi',
+        type: 'Multiple Choice',
+        description:
+            'Soal ini menguji pengetahuan tentang kesehatan reproduksi, termasuk fungsi tubuh, pencegahan penyakit, dan perencanaan keluarga.',
         duration: 30,
+        kategori: 'kesehatan_reproduksi',
       ),
       QuizModel(
-        name: 'Penyebab Kehamilan', 
-        type: 'Multiple Choice', 
-        description: 
-        'Soal ini menguji pengetahuan tentang bagaimana kehamilan terjadi, termasuk hubungan antara sel telur dan sperma.', 
+        name: 'Penyebab Kehamilan',
+        type: 'Multiple Choice',
+        description:
+            'Soal ini menguji pengetahuan tentang bagaimana kehamilan terjadi, termasuk hubungan antara sel telur dan sperma.',
         duration: 30,
+        kategori: 'penyebab_kehamilan',
       ),
       QuizModel(
-        name: 'Perubahan Emosi', 
-        type: 'Multiple Choice', 
-        description: 
-        'Soal ini membahas perubahan emosi selama masa remaja, seperti suasana hati yang berubah-ubah.', 
+        name: 'Perubahan Emosi',
+        type: 'Multiple Choice',
+        description:
+            'Soal ini membahas perubahan emosi selama masa remaja, seperti suasana hati yang berubah-ubah.',
         duration: 30,
+        kategori: 'perubahan_emosi',
       ),
     ];
 

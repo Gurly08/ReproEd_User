@@ -11,6 +11,7 @@ import '../model/response/auth_response_models.dart';
 class AuthRemoteDataSource {
   Future<Either<String, AuthResponseModel>> register(
       RegisterRequestModels registerRequestModels) async {
+    // ignore: prefer_const_declarations
     final String url = '${Variables.baseUrl}/api/register';
     
     // Logging before sending request

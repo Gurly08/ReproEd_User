@@ -63,21 +63,6 @@ class _HeaderHomeState extends State<HeaderHome> {
                 ),
               ),
               const Spacer(),
-              IconButton(
-                onPressed: () {},
-                icon: Container(
-                  width: 40.0,
-                  height: 40.0,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.3),
-                    borderRadius: const BorderRadius.all(Radius.circular(50.0)),
-                  ),
-                  child: const Icon(Icons.notifications, color: Colors.white),
-                ),
-              ),
             ],
           ),
           const SizedBox(height: 40.0),

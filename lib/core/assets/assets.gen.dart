@@ -76,6 +76,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/esgul.png
   AssetGenImage get esgul => const AssetGenImage('assets/images/esgul.png');
 
+  /// File path: assets/images/finish.png
+  AssetGenImage get finish => const AssetGenImage('assets/images/finish.png');
+
   /// File path: assets/images/girl.png
   AssetGenImage get girl => const AssetGenImage('assets/images/girl.png');
 
@@ -177,6 +180,7 @@ class $AssetsImagesGen {
         daily,
         dna,
         esgul,
+        finish,
         girl,
         google,
         ibuhamil,

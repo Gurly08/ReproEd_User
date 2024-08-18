@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reproeduser/data/datasource/edukasi_datasource_remote.dart';
+import 'package:reproeduser/data/datasource/ujian_datasource_remote.dart';
 import 'package:reproeduser/pages/auth/bloc/login/login_bloc.dart';
 import 'package:reproeduser/pages/bloc/edukasi/edukasi_bloc.dart';
+import 'package:reproeduser/pages/testpemahaman/bloc/createujian/create_ujian_bloc.dart';
+import 'package:reproeduser/pages/testpemahaman/bloc/daftarsoal/daftar_soal_bloc.dart';
+import 'package:reproeduser/pages/testpemahaman/bloc/hitungnilai/hitung_nilai_bloc.dart';
+import 'package:reproeduser/pages/testpemahaman/bloc/ujianbykategori/ujian_by_kategori_bloc.dart';
 import 'pages/auth/bloc/logout/logout_bloc.dart';
 import 'pages/auth/bloc/register/register_bloc.dart';
 import 'pages/splash_entries/splash.dart';
@@ -28,6 +33,18 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => EdukasiBloc(EdukasiRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => UjianByKategoriBloc(UjianRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => CreateUjianBloc(UjianRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => DaftarSoalBloc(),
+        ),
+        BlocProvider(
+          create: (context) => HitungNilaiBloc(),
         ),
       ],
       child: MaterialApp(

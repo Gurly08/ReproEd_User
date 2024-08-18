@@ -12,7 +12,7 @@ class InfoKaraktaku extends StatelessWidget {
       borderRadius: BorderRadius.circular(22),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-        height: 300,
+        height: 320,
         width: 375,
         color: const Color.fromARGB(223, 255, 221, 136),
         child: Column(
@@ -25,7 +25,7 @@ class InfoKaraktaku extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             Text(
-              maxLines: 4,
+              maxLines: 5,
               'Karaktaku adalah sebuah test pemahaman yang dapat membantu kamu meningkatkan pemahaman mu terkait Reproduksi Edukasi',
               style: mediumBlackTextStyle.copyWith(fontSize: 15),
             ),
