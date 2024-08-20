@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reproeduser/pages/auth/bloc/logout/logout_bloc.dart';
 import 'package:reproeduser/pages/auth/login.dart';
+import 'package:reproeduser/pages/home/dashboard.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 
 import '../../data/datasource/auth_datasource_local.dart';
@@ -18,6 +19,12 @@ class Profil extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => context.pushReplacement(const Dashboard()), 
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white,)),
+          backgroundColor: Colors.transparent,
+      ),
         backgroundColor: darkblue,
         body: SafeArea(
           bottom: false,

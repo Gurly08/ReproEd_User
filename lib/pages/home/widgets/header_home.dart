@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:reproeduser/core/extentions/build_context_ext.dart';
 import 'package:reproeduser/data/datasource/auth_datasource_local.dart';
 import 'package:reproeduser/data/model/response/auth_response_models.dart';
+import 'package:reproeduser/pages/profil/profil.dart';
 import 'package:reproeduser/pages/widgets/theme.dart';
 
 class HeaderHome extends StatefulWidget {
@@ -70,7 +72,7 @@ class _HeaderHomeState extends State<HeaderHome> {
           ElevatedButton(
             onPressed: () {
               // tambahkan logika untuk navigasi ke halaman edit profil
-              Navigator.pushNamed(context, '/editProfile');
+              context.pushReplacement(const Profil());
             },
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.purple,
