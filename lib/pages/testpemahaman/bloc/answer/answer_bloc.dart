@@ -2,19 +2,22 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:reproeduser/data/datasource/ujian_datasource_remote.dart';
+part 'answer_event.dart';
+part 'answer_state.dart';
+part 'answer_bloc.freezed.dart';
 
-part 'create_ujian_event.dart';
-part 'create_ujian_state.dart';
-part 'create_ujian_bloc.freezed.dart';
-
-class CreateUjianBloc extends Bloc<CreateUjianEvent, CreateUjianState> {
+class AnswerBloc extends Bloc<AnswerEvent, AnswerState> {
   final UjianRemoteDatasource ujianRemoteDatasource;
-  CreateUjianBloc(
+  AnswerBloc(
     this.ujianRemoteDatasource,
   ) : super(const _Initial()) {
-    on<CreateUjianEvent>((event, emit) async{
+    on<_SetAnswer>((event, emit) async {
       emit(const _Loading());
-      final response = await ujianRemoteDatasource.createUjian();
+      final response = 
+      await ujianRemoteDatasource.answer(
+        event.soalId, 
+        event.jawaban,
+      );
       response.fold(
         (l) => emit(_Error(l)), 
         (r) => emit(const _Success()),

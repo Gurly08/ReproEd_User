@@ -14,13 +14,6 @@ class AuthRemoteDataSource {
     // ignore: prefer_const_declarations
     final String url = '${Variables.baseUrl}/api/register';
     
-    // Logging before sending request
-    print('Sending request to: $url');
-    print('Request headers: ${{
-      'Content-type': 'application/json; charset=UTF-8',
-    }}');
-    print('Request body: ${registerRequestModels.toJson()}');
-    
     final response = await http.post(
       Uri.parse(url),
       headers: <String, String>{
@@ -29,9 +22,6 @@ class AuthRemoteDataSource {
       body: registerRequestModels.toJson(),
     );
     
-    // Logging after receiving response
-    print('Response status: ${response.statusCode}');
-    print('Response body: ${response.body}');
     
     if (response.statusCode == 200) {
       return Right(AuthResponseModel.fromJson(response.body));
@@ -66,10 +56,6 @@ class AuthRemoteDataSource {
     },
     body: json.encode(data.toJson()), // Use json.encode to send as a JSON string
   );
-
-  // Logging after receiving response
-  print('Response status: ${response.statusCode}');
-  print('Response body: ${response.body}');
 
   if (response.statusCode == 200) {
     return Right(AuthResponseModel.fromJson(response.body));

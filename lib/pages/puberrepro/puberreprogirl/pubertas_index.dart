@@ -32,15 +32,6 @@ class _PuberReprogirlState extends State<PuberReprogirl> {
             'PuberReprogirl',
             style: boldBlackTextStyle.copyWith(fontSize: 15),
           ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.notifications,
-                color: Colors.black,
-              ),
-            ),
-          ],
           leading: IconButton(
             onPressed: () {
               context.pushReplacement(const Home());

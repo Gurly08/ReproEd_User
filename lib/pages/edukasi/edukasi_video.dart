@@ -80,15 +80,6 @@ class _VideoScreenState extends State<VideoScreen> {
           'Video Edukasi',
           style: boldBlackTextStyle.copyWith(fontSize: 15),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications,
-              color: Colors.black,
-            ),
-          ),
-        ],
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(

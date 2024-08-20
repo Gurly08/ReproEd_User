@@ -36,15 +36,6 @@ class _EdukasiArtikelState extends State<EdukasiArtikel> {
             'Edukasi Artikel',
             style: boldBlackTextStyle.copyWith(fontSize: 15),
           ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.notifications,
-                color: Colors.black,
-              ),
-            ),
-          ],
           leading: IconButton(
             onPressed: () {
               Navigator.pushReplacement(

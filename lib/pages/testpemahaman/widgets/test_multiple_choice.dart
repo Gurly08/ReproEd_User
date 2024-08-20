@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reproeduser/pages/testpemahaman/bloc/answer/answer_bloc.dart';
 import 'package:reproeduser/pages/testpemahaman/bloc/daftarsoal/daftar_soal_bloc.dart';
 import 'package:reproeduser/pages/testpemahaman/bloc/hitungnilai/hitung_nilai_bloc.dart';
 import 'package:reproeduser/pages/widgets/theme.dart';
@@ -19,9 +20,10 @@ class QuizMultipleChoice extends StatefulWidget {
 }
 
 class _QuizMultipleChoiceState extends State<QuizMultipleChoice> {
+  String selectedAnswer = '';
+  String jawaban = '';
   @override
   Widget build(BuildContext context) {
-    // final ValueNotifier<String> selectedAnswer = ValueNotifier("");//untuk dummy
     return BlocBuilder<DaftarSoalBloc, DaftarSoalState>(
       builder: (context, state) {
         return state.maybeWhen(
@@ -61,21 +63,43 @@ class _QuizMultipleChoiceState extends State<QuizMultipleChoice> {
                   children: [
                     AnswerChoices(
                       label: data[index].jawabanA,
-                      isSelected: false,
-                      onChanged: (value) {},
+                      isSelected: selectedAnswer == data[index].jawabanA,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedAnswer = value;
+                          jawaban = 'a';
+                        });
+                      },
                     ),
                     const SizedBox(height: 16.0),
                     AnswerChoices(
                       label: data[index].jawabanB,
-                      isSelected: false,
-                      onChanged: (value) {},
+                      isSelected: selectedAnswer == data[index].jawabanB,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedAnswer = value;
+                          jawaban = 'b';
+                        });
+                      },
                     ),
                   ],
                 ),
                 const SizedBox(height: 38.0),
-                isNext
+                jawaban.isEmpty
+                ? Button.filled(
+                  onPressed: (){}, 
+                  disabled: true,
+                  label: 'Selanjutnya',
+                )
+                :isNext
                 ? Button.filled(
                   onPressed: () {
+                    context.read<AnswerBloc>()
+                    .add(AnswerEvent.setAnswer(
+                      data[index].id, 
+                      jawaban,
+                      )
+                    );
                     context
                         .read<DaftarSoalBloc>()
                         .add(const DaftarSoalEvent.nextSoal());
@@ -86,7 +110,7 @@ class _QuizMultipleChoiceState extends State<QuizMultipleChoice> {
                   onPressed: () {
                     context
                     .read<HitungNilaiBloc>()
-                    .add(const HitungNilaiEvent.getNilai('kategori'));
+                    .add( HitungNilaiEvent.getNilai(widget.kategori));
                   },
                   label: 'Selesai',
                 ),

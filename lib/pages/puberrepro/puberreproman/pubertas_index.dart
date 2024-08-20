@@ -5,7 +5,6 @@ import 'package:reproeduser/pages/models/materi_list_models.dart';
 import 'package:reproeduser/pages/puberrepro/puberreproman/list_materi.dart';
 import 'package:reproeduser/pages/puberrepro/widgets/card_pubertas.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
-
 import '../../widgets/theme.dart';
 import '../widgets/button_repro.dart';
 
@@ -31,15 +30,6 @@ class _PuberReproManState extends State<PuberReproMan> {
             'PuberReproMan',
             style: boldwhitetext.copyWith(fontSize: 15),
           ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.notifications,
-                color: Colors.white,
-              ),
-            ),
-          ],
           leading: IconButton(
             onPressed: () {
               context.pushReplacement(const Home());

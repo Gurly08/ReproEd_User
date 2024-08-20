@@ -28,15 +28,6 @@ class ListMaterigirl extends StatelessWidget {
           'PuberReproMan',
           style: boldBlackTextStyle.copyWith(fontSize: 15),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications,
-              color: Colors.black,
-            ),
-          ),
-        ],
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(
@@ -94,7 +85,7 @@ class ListMaterigirl extends StatelessWidget {
                     color: Colors.pink[500],
                     child: Container(
                       width: double.infinity,
-                      height: 80, // Set height for the card
+                      height: 100, // Set height for the card
                       padding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 8),
                       child: Column(

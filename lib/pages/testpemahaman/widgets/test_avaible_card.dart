@@ -53,7 +53,7 @@ class TestAvaibleCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 10.0),
                     const Text(
-                      '25 Pertanyaan',
+                      '20 Pertanyaan',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],

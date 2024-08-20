@@ -174,7 +174,6 @@ class _SignupState extends State<Signup> {
                   state.maybeWhen(
                     orElse: () {},
                     success: (authResponseModel) {
-                      print('Registrasi berhasil: ${authResponseModel.user}');
                       AuthLocalDatasource().saveAuthData(authResponseModel);
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
@@ -190,7 +189,6 @@ class _SignupState extends State<Signup> {
                       });
                     },
                     error: (message) {
-                      print('Registrasi gagal: $message');
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text('Registrasi gagal: $message'),
@@ -205,12 +203,6 @@ class _SignupState extends State<Signup> {
                     orElse: () {
                       return Button.filled(
                         onPressed: () {
-                          print('Nama: ${namaController.text}');
-                          print('Email: ${emailController.text}');
-                          print('Kelas: ${kelasMapping[valueChoose]}');
-                          print('Umur: ${umurController.text}');
-                          print('Jenis Kelamin: ${genderMapping[jenisKelamin]}');
-                          print('Password: ${passwordController.text}');
                           final dataRequest = RegisterRequestModels(
                             name: namaController.text,
                             email: emailController.text,

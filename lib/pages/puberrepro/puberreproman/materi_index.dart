@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:reproeduser/core/assets/assets.gen.dart';
 import 'package:reproeduser/pages/models/materi_list_models.dart';
 import 'package:reproeduser/pages/puberrepro/puberreproman/list_materi.dart';
-
 import '../../widgets/theme.dart';
 
 class MateriDS extends StatefulWidget {
@@ -28,15 +27,6 @@ class _MateriDSState extends State<MateriDS> {
           widget.selectedMateri.name,
           style: semiboldBlackTextStyle.copyWith(fontSize: 15),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications,
-              color: Colors.black,
-            ),
-          ),
-        ],
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(

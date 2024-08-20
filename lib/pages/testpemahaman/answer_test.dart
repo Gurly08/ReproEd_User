@@ -46,11 +46,35 @@ class _QuizStartPageState extends State<QuizStartPage> {
             state.maybeWhen(
                 orElse: () {},
                 success: (e) {
-                  context
-                      .read<DaftarSoalBloc>()
-                      .add(DaftarSoalEvent.getDaftarSoal(
-                        e.data,
-                      ));
+                  if (e.timer == 0) {
+                    //show dialog waktu habis
+                    showDialog(
+                      context: context, 
+                      builder: (context) => AlertDialog(
+                        title: const Text('Waktu Habis!!'),
+                        content: const Text(
+                          'Yahh... maaf waktu kamu habis silahkan klik tombol selesai',
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => context.pushReplacement(
+                              FinishTest(
+                                data: widget.data, 
+                                timeRemaining: 0,
+                              )
+                            ), 
+                            child: const Text('Selesai'))
+                        ],
+                      ),
+                    );
+                  } else {
+                   context
+                    .read<DaftarSoalBloc>()
+                    .add(DaftarSoalEvent.getDaftarSoal(
+                      e.data,
+                    ),
+                  ); 
+                  }
                 });
           },
           child: BlocBuilder<UjianByKategoriBloc, UjianByKategoriState>(

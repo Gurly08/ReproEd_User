@@ -29,15 +29,6 @@ class _MateriDSgirlState extends State<MateriDSgirl> {
           widget.selectedMateri.name,
           style: semiboldBlackTextStyle.copyWith(fontSize: 15),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications,
-              color: Colors.black,
-            ),
-          ),
-        ],
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(

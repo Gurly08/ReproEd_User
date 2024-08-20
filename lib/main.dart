@@ -4,6 +4,7 @@ import 'package:reproeduser/data/datasource/edukasi_datasource_remote.dart';
 import 'package:reproeduser/data/datasource/ujian_datasource_remote.dart';
 import 'package:reproeduser/pages/auth/bloc/login/login_bloc.dart';
 import 'package:reproeduser/pages/bloc/edukasi/edukasi_bloc.dart';
+import 'package:reproeduser/pages/testpemahaman/bloc/answer/answer_bloc.dart';
 import 'package:reproeduser/pages/testpemahaman/bloc/createujian/create_ujian_bloc.dart';
 import 'package:reproeduser/pages/testpemahaman/bloc/daftarsoal/daftar_soal_bloc.dart';
 import 'package:reproeduser/pages/testpemahaman/bloc/hitungnilai/hitung_nilai_bloc.dart';
@@ -44,7 +45,10 @@ class MyApp extends StatelessWidget {
           create: (context) => DaftarSoalBloc(),
         ),
         BlocProvider(
-          create: (context) => HitungNilaiBloc(),
+          create: (context) => HitungNilaiBloc(UjianRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => AnswerBloc(UjianRemoteDatasource()),
         ),
       ],
       child: MaterialApp(

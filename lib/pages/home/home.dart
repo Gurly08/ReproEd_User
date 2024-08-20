@@ -4,8 +4,6 @@ import 'package:reproeduser/pages/home/widgets/header_home.dart';
 import 'package:reproeduser/pages/home/widgets/menu_home.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 import 'package:reproeduser/pages/widgets/theme.dart';
-
-// Ubah import ini untuk menggunakan model yang benar
 import '../../data/model/response/edukasi_response_models.dart'; 
 import '../edukasi/edukasi_artikel.dart';
 import '../puberrepro/puberreprogirl/pubertas_index.dart';

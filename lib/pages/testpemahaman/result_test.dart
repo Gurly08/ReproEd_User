@@ -22,7 +22,7 @@ class ResultTest extends StatelessWidget {
         type: 'Multiple Choice',
         description:
             'Soal ini menguji pengetahuan tentang kesehatan reproduksi, termasuk fungsi tubuh, pencegahan penyakit, dan perencanaan keluarga.',
-        duration: 30,
+        duration: 10,
         kategori: 'kesehatan_reproduksi',
       ),
       QuizModel(
@@ -30,7 +30,7 @@ class ResultTest extends StatelessWidget {
         type: 'Multiple Choice',
         description:
             'Soal ini menguji pengetahuan tentang bagaimana kehamilan terjadi, termasuk hubungan antara sel telur dan sperma.',
-        duration: 30,
+        duration: 10,
         kategori: 'penyebab_kehamilan',
       ),
       QuizModel(
@@ -38,7 +38,7 @@ class ResultTest extends StatelessWidget {
         type: 'Multiple Choice',
         description:
             'Soal ini membahas perubahan emosi selama masa remaja, seperti suasana hati yang berubah-ubah.',
-        duration: 30,
+        duration: 10,
         kategori: 'perubahan_emosi',
       ),
     ];

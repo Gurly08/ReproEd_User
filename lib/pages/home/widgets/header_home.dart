@@ -82,7 +82,7 @@ class _HeaderHomeState extends State<HeaderHome> {
                   const EdgeInsets.symmetric(horizontal: 75.0, vertical: 12.0),
             ),
             child: const Text(
-              'Edit Profile',
+              'Lihat Profile',
               style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.w500,

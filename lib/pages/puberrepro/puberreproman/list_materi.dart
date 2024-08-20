@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reproeduser/pages/models/materi_list_models.dart';
 import 'package:reproeduser/pages/puberrepro/puberreproman/materi_index.dart';
 import 'package:reproeduser/pages/puberrepro/puberreproman/pubertas_index.dart';
-
 import '../../widgets/theme.dart';
-
 
 class ListMateri extends StatelessWidget {
   const ListMateri({super.key, required this.listMateri});
@@ -22,15 +20,6 @@ class ListMateri extends StatelessWidget {
           'PuberReproMan',
           style: boldwhitetext.copyWith(fontSize: 15),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications,
-              color: Colors.white,
-            ),
-          ),
-        ],
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(
@@ -88,7 +77,7 @@ class ListMateri extends StatelessWidget {
                     color: const Color.fromARGB(255, 13, 122, 111),
                     child: Container(
                       width: double.infinity,
-                      height: 80, // Set height for the card
+                      height: 100, // Set height for the card
                       padding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 8),
                       child: Column(

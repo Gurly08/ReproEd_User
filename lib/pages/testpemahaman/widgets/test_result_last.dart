@@ -9,8 +9,8 @@ class TestResultLast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const correct = 23;
-    const wrong = 12;
+    const correct = 14;
+    const wrong = 6;
     const totalQuestion = correct + wrong;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
