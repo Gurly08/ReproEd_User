@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 import 'package:reproeduser/data/model/response/result_response_models.dart';
@@ -49,8 +48,6 @@ class UjianRemoteDatasource{
       'soal_id': soalId,
       'jawaban': jawaban,
     };
-    print('soal_id: $soalId');
-    print('jawaban: $jawaban');
     final response =await http.post(
       Uri.parse('${Variables.baseUrl}/api/answers'),
       headers: <String, String>{
@@ -69,7 +66,6 @@ class UjianRemoteDatasource{
 
   Future<Either<String, String>> hitungNilai(String kategori) async{
     final authData = await AuthLocalDatasource().getAuthData();
-    print('kategori: $kategori');
     final response =await http.get(
       Uri.parse('${Variables.baseUrl}/api/get-nilai?kategori=$kategori'),
       headers: <String, String>{
