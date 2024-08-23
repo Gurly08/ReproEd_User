@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:reproeduser/pages/models/materi_list_models.dart';
 import 'package:reproeduser/pages/puberrepro/puberreproman/materi_index.dart';
 import 'package:reproeduser/pages/puberrepro/puberreproman/pubertas_index.dart';
 import '../../widgets/theme.dart';
+import '../models/materis_models.dart';
 
 class ListMateri extends StatelessWidget {
   const ListMateri({super.key, required this.listMateri});
 
-  final List<Materi> listMateri;
+  final List<MateriPubertas> listMateri;
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +66,8 @@ class ListMateri extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MateriDS(
-                          selectedMateri: listMateri[index],
-                          listMateri: listMateri, // Mengirimkan listMateri
+                        builder: (context) => MateriDS(dataMateri: dataMateriLakilaki,
+                          selectedMateri: dataMateriLakilaki[index],// Mengirimkan listMateri
                         ),
                       ),
                     );
@@ -85,7 +84,7 @@ class ListMateri extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            listMateri[index].name,
+                            listMateri[index].judul,
                             style: mediumWhiteTextStyle.copyWith(fontSize: 16),
                           ),
                         ],

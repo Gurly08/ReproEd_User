@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:reproeduser/core/assets/assets.gen.dart';
-import 'package:reproeduser/pages/home/home.dart';
-import 'package:reproeduser/pages/models/materi_list_models.dart';
+import 'package:reproeduser/pages/home/dashboard.dart';
+import 'package:reproeduser/pages/puberrepro/models/materis_models.dart';
 import 'package:reproeduser/pages/puberrepro/puberreproman/list_materi.dart';
+import 'package:reproeduser/pages/puberrepro/puberreproman/reproduksi/reproduksi_list.dart';
 import 'package:reproeduser/pages/puberrepro/widgets/card_pubertas.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 import '../../widgets/theme.dart';
@@ -32,7 +33,7 @@ class _PuberReproManState extends State<PuberReproMan> {
           ),
           leading: IconButton(
             onPressed: () {
-              context.pushReplacement(const Home());
+              context.pushReplacement(const Dashboard());
             },
             icon: const Icon(
               Icons.arrow_back_ios,
@@ -61,6 +62,7 @@ class _PuberReproManState extends State<PuberReproMan> {
                       isSelected: !isPubertasSelected,
                       onSelected: () {
                         setState(() {
+                          context.pushReplacement(const ReproduksiList());
                           isPubertasSelected = false;
                         });
                       },
@@ -88,7 +90,7 @@ class _PuberReproManState extends State<PuberReproMan> {
                         imagePath: Assets.images.sub1man.path,
                         onPressed: () {
                           context.pushReplacement(ListMateri(
-                            listMateri: listMateri,
+                            listMateri: dataMateriLakilaki,
                           ));
                         },
                         subtitle: 'Sub Materi 1',
@@ -99,7 +101,7 @@ class _PuberReproManState extends State<PuberReproMan> {
                         imagePath: Assets.images.sub2man.path,
                         onPressed: () {
                           context.pushReplacement(ListMateri(
-                            listMateri: listMateri,
+                            listMateri: dataMateriLakilaki,
                           ));
                         },
                         subtitle: 'Sub Materi 2',
@@ -110,7 +112,7 @@ class _PuberReproManState extends State<PuberReproMan> {
                         imagePath: Assets.images.sub3man.path,
                         onPressed: () {
                           context.pushReplacement(ListMateri(
-                            listMateri: listMateri,
+                            listMateri: dataMateriLakilaki,
                           ));
                         },
                         subtitle: 'Sub Materi 3',
@@ -121,7 +123,7 @@ class _PuberReproManState extends State<PuberReproMan> {
                         imagePath: Assets.images.sub4man.path,
                         onPressed: () {
                           context.pushReplacement(ListMateri(
-                            listMateri: listMateri,
+                            listMateri: dataMateriLakilaki,
                           ));
                         },
                         subtitle: 'Sub Materi 4',

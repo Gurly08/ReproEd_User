@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:reproeduser/core/assets/assets.gen.dart';
-import 'package:reproeduser/pages/models/materi_list_models.dart';
 import 'package:reproeduser/pages/puberrepro/puberreproman/list_materi.dart';
 import '../../widgets/theme.dart';
+import '../models/materis_models.dart';
 
 class MateriDS extends StatefulWidget {
-  final Materi selectedMateri;
-  final List<Materi> listMateri; // Menambahkan parameter listMateri
-
+  final MateriPubertas selectedMateri; // Menambahkan parameter listMateri
+  final List<MateriPubertas> dataMateri;
   const MateriDS(
-      {super.key, required this.selectedMateri, required this.listMateri});
+      {
+        super.key, 
+        required this.selectedMateri, 
+        required this.dataMateri,
+      });
 
   @override
   // ignore: library_private_types_in_public_api
@@ -24,7 +26,7 @@ class _MateriDSState extends State<MateriDS> {
         backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
-          widget.selectedMateri.name,
+          widget.selectedMateri.judul,
           style: semiboldBlackTextStyle.copyWith(fontSize: 15),
         ),
         leading: IconButton(
@@ -33,7 +35,7 @@ class _MateriDSState extends State<MateriDS> {
               context,
               MaterialPageRoute(
                 builder: (context) => ListMateri(
-                    listMateri: widget.listMateri), // Mengirimkan listMateri
+                    listMateri: dataMateriLakilaki), // Mengirimkan listMateri
               ),
             );
           },
@@ -64,42 +66,29 @@ class _MateriDSState extends State<MateriDS> {
                           child: Text(
                             style:
                                 semiboldBlackTextStyle.copyWith(fontSize: 15),
-                            '${widget.selectedMateri.name} \n Selamat Membaca ;)',
+                            '${widget.selectedMateri.judul} \n Selamat Membaca ;)',
                           ),
                         ),
                       ],
                     )),
               ),
               const SizedBox(height: 20),
-              Image.asset(Assets.images.assetpuberman1.path),
+              Image.asset(widget.selectedMateri.imagesone),
               const SizedBox(height: 20),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con',
+                widget.selectedMateri.paragrafone,
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 15),
+              Image.asset(widget.selectedMateri.imagestwo),
+              const SizedBox(height: 20),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con',
+                widget.selectedMateri.paragratwo,
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 15),
-              Image.asset(Assets.images.assetpuberman2.path),
-              const SizedBox(height: 20),
-              Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con',
-                style: regularBlackTextStyle.copyWith(fontSize: 15),
-                textAlign: TextAlign.justify,
-              ),
-              const SizedBox(height: 15),
-              Image.asset(Assets.images.assetpuberman3.path),
-              const SizedBox(height: 20),
-              Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con',
-                style: regularBlackTextStyle.copyWith(fontSize: 15),
-                textAlign: TextAlign.justify,
-              ),
             ],
           ),
         ),
