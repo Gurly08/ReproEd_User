@@ -9,7 +9,6 @@ import '../../data/datasource/auth_datasource_local.dart';
 import '../../data/model/response/auth_response_models.dart';
 import '../models/layanan_models.dart';
 import '../widgets/theme.dart';
-import 'edit_profil.dart';
 import 'widgets/card_profil.dart';
 
 class Profil extends StatelessWidget {
@@ -82,23 +81,23 @@ class Profil extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 18),
                       child: Column(
                         children: [
-                          const SizedBox(height: 46),
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const EditProfil(),
-                                  ));
-                            },
-                            child: CardProfil(
-                              layanan: Layanan(
-                                  id: 4,
-                                  imageUrl: 'assets/images/Person.png',
-                                  name: 'Edit Profil',
-                                  color: Colors.yellow[200]),
-                            ),
-                          ),
+                          // const SizedBox(height: 46),
+                          // InkWell(
+                          //   onTap: () {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //           builder: (context) => const EditProfil(),
+                          //         ));
+                          //   },
+                          //   child: CardProfil(
+                          //     layanan: Layanan(
+                          //         id: 4,
+                          //         imageUrl: 'assets/images/Person.png',
+                          //         name: 'Edit Profil',
+                          //         color: Colors.yellow[200]),
+                          //   ),
+                          // ),
                           const SizedBox(height: 18),
                           InkWell(
                             onTap: () {},

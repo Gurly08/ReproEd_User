@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:reproeduser/pages/puberrepro/models/materis_models.dart';
-import 'package:reproeduser/pages/puberrepro/puberreprogirl/list_materigirl.dart';
+import 'package:reproeduser/pages/puberrepro/puberreproman/reproduksi/reproduksi_listman.dart';
 
-import '../../widgets/theme.dart';
+import '../../../widgets/theme.dart';
+import '../../models/rerpoduksi_models.dart';
 
-
-class MateriDSgirl extends StatefulWidget {
-  final MateriPubertas selectedMateri;
-  final List<MateriPubertas> listMateri; // Menambahkan parameter listMateri
-
-  const MateriDSgirl(
-      {super.key, required this.selectedMateri, required this.listMateri});
+class RerpoIndexMan extends StatefulWidget {
+  final MateriReproduksi selectedMateri;
+  final List<MateriReproduksi> dataMateri;
+  const RerpoIndexMan({
+    super.key,
+    required this.selectedMateri,
+    required this.dataMateri,
+  });
 
   @override
-  // ignore: library_private_types_in_public_api
-  _MateriDSgirlState createState() => _MateriDSgirlState();
+  State<RerpoIndexMan> createState() => _RerpoIndexManState();
 }
 
-class _MateriDSgirlState extends State<MateriDSgirl> {
+class _RerpoIndexManState extends State<RerpoIndexMan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,8 +33,7 @@ class _MateriDSgirlState extends State<MateriDSgirl> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => ListMaterigirl(
-                    listMateri: widget.listMateri), // Mengirimkan listMateri
+                builder: (context) => const ReproduksiList(), // Mengirimkan listMateri
               ),
             );
           },
@@ -81,12 +80,16 @@ class _MateriDSgirlState extends State<MateriDSgirl> {
               ),
               const SizedBox(height: 15),
               Image.asset(widget.selectedMateri.imagestwo),
+              Image.asset(widget.selectedMateri.imagesthree),
               const SizedBox(height: 20),
               Text(
                 widget.selectedMateri.paragratwo,
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),
+              const SizedBox(height: 15),
+              Image.asset(widget.selectedMateri.imagestfour),
+              const SizedBox(height: 15),
             ],
           ),
         ),

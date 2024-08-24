@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:reproeduser/core/assets/assets.gen.dart';
 import 'package:reproeduser/pages/home/home.dart';
-import 'package:reproeduser/pages/models/materi_list_models.dart';
+import 'package:reproeduser/pages/puberrepro/models/materis_models.dart';
 import 'package:reproeduser/pages/puberrepro/puberreprogirl/list_materigirl.dart';
+import 'package:reproeduser/pages/puberrepro/puberreprogirl/reproduksi/reproduksi_listgirl.dart';
 import 'package:reproeduser/pages/puberrepro/widgets/card_pubertasgirl.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 
@@ -29,7 +30,7 @@ class _PuberReprogirlState extends State<PuberReprogirl> {
           backgroundColor: Colors.transparent,
           centerTitle: true,
           title: Text(
-            'PuberReprogirl',
+            'PuberReproGirl',
             style: boldBlackTextStyle.copyWith(fontSize: 15),
           ),
           leading: IconButton(
@@ -63,6 +64,7 @@ class _PuberReprogirlState extends State<PuberReprogirl> {
                       isSelected: !isPubertasSelected,
                       onSelected: () {
                         setState(() {
+                          context.pushReplacement(const ReproduksiListGirl());
                           isPubertasSelected = false;
                         });
                       },
@@ -90,8 +92,7 @@ class _PuberReprogirlState extends State<PuberReprogirl> {
                         imagePath: Assets.images.subpubergirl1.path,
                         onPressed: () {
                           context.pushReplacement(ListMaterigirl(
-                            listMateri:
-                                listMateri, // Pastikan `listMateri` sudah terdefinisi dan di-passing ke sini
+                            listMateri: dataMateriPerempuan, 
                           ));
                         },
                         subtitle: 'Sub Materi 1',
@@ -102,8 +103,7 @@ class _PuberReprogirlState extends State<PuberReprogirl> {
                         imagePath: Assets.images.subpubergirl2.path,
                         onPressed: () {
                           context.pushReplacement(ListMaterigirl(
-                            listMateri:
-                                listMateri, // Pastikan `listMateri` sudah terdefinisi dan di-passing ke sini
+                            listMateri:dataMateriPerempuan, // Pastikan `listMateri` sudah terdefinisi dan di-passing ke sini
                           ));
                         },
                         subtitle: 'Sub Materi 2',
@@ -114,7 +114,7 @@ class _PuberReprogirlState extends State<PuberReprogirl> {
                         imagePath: Assets.images.subpubergirl3.path,
                         onPressed: () {
                           context.pushReplacement(ListMaterigirl(
-                            listMateri: listMateri,
+                            listMateri: dataMateriPerempuan,
                           ));
                         },
                         subtitle: 'Sub Materi 3',
@@ -125,8 +125,7 @@ class _PuberReprogirlState extends State<PuberReprogirl> {
                         imagePath: Assets.images.subpubergirl4.path,
                         onPressed: () {
                           context.pushReplacement(ListMaterigirl(
-                            listMateri:
-                                listMateri, // Pastikan `listMateri` sudah terdefinisi dan di-passing ke sini
+                            listMateri:dataMateriPerempuan, // Pastikan `listMateri` sudah terdefinisi dan di-passing ke sini
                           ));
                         },
                         subtitle: 'Sub Materi 4',

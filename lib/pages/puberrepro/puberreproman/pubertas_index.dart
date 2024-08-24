@@ -3,7 +3,7 @@ import 'package:reproeduser/core/assets/assets.gen.dart';
 import 'package:reproeduser/pages/home/dashboard.dart';
 import 'package:reproeduser/pages/puberrepro/models/materis_models.dart';
 import 'package:reproeduser/pages/puberrepro/puberreproman/list_materi.dart';
-import 'package:reproeduser/pages/puberrepro/puberreproman/reproduksi/reproduksi_list.dart';
+import 'package:reproeduser/pages/puberrepro/puberreproman/reproduksi/reproduksi_listman.dart';
 import 'package:reproeduser/pages/puberrepro/widgets/card_pubertas.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 import '../../widgets/theme.dart';

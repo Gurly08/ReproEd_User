@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:reproeduser/pages/models/materi_list_models.dart';
 import 'package:reproeduser/pages/puberrepro/puberreprogirl/materi_index.dart';
 import 'package:reproeduser/pages/puberrepro/puberreprogirl/pubertas_index.dart';
-
 import '../../widgets/theme.dart';
+import '../models/materis_models.dart';
 
 
 // ignore: must_be_immutable
 class ListMaterigirl extends StatelessWidget {
-  ListMaterigirl({super.key, required this.listMateri});
-
-  List<Materi> listMateri = [
-    Materi(name: "Definisi Pubertas"),
-    Materi(name: "Tahapan Pubertas"),
-    Materi(name: "Pertemeanan di Masa Pubertas"),
-    Materi(name: "Perlukah Edukasi ?"),
-  ];
+  const ListMaterigirl({super.key, required this.listMateri});
+  final  List<MateriPubertas> listMateri;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +18,7 @@ class ListMaterigirl extends StatelessWidget {
         backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
-          'PuberReproMan',
+          'PuberReproGirl',
           style: boldBlackTextStyle.copyWith(fontSize: 15),
         ),
         leading: IconButton(
@@ -75,8 +68,8 @@ class ListMaterigirl extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => MateriDSgirl(
-                          selectedMateri: listMateri[index],
-                          listMateri: listMateri, // Mengirimkan listMateri
+                          selectedMateri: dataMateriPerempuan[index],
+                          listMateri: dataMateriPerempuan, // Mengirimkan listMateri
                         ),
                       ),
                     );
@@ -93,7 +86,7 @@ class ListMaterigirl extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            listMateri[index].name,
+                            listMateri[index].judul,
                             style: mediumWhiteTextStyle.copyWith(fontSize: 16),
                           ),
                         ],

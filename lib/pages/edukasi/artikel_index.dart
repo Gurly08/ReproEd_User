@@ -130,13 +130,13 @@ class _ArtikelDSState extends State<ArtikelDS> {
               Image.asset(Assets.images.dna.path),
               const SizedBox(height: 20),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con',
+                'Artikel ini menjelaskan perubahan fisik dan emosional yang terjadi pada remaja selama masa pubertas. Perubahan fisik meliputi pertumbuhan tinggi badan, perkembangan payudara pada perempuan, perubahan suara pada laki-laki, dan pertumbuhan rambut di area tubuh tertentu. Selain itu, hormon yang berubah selama masa pubertas dapat menyebabkan perubahan suasana hati. Artikel ini memberikan saran bagi remaja untuk menerima perubahan ini sebagai bagian normal dari pertumbuhan dan menawarkan tips untuk menjaga kesehatan dan kebersihan diri selama masa pubertas.',
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 15),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con',
+                'Ini mencakup cara berbicara dengan anak tentang perubahan fisik dan emosional yang mereka alami, memberikan penjelasan yang jujur dan ilmiah tentang apa yang sedang terjadi, dan menciptakan lingkungan yang aman dan mendukung di rumah. Artikel ini juga menekankan pentingnya komunikasi terbuka antara orang tua dan anak untuk membantu anak merasa lebih nyaman dan tidak malu dengan perubahan yang terjadi pada tubuh mereka.',
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),
@@ -144,7 +144,7 @@ class _ArtikelDSState extends State<ArtikelDS> {
               Image.asset(Assets.images.assetpubergirl2.path),
               const SizedBox(height: 20),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con',
+                'bagaimana remaja dapat mengelola perubahan emosional yang terjadi selama masa pubertas, yang seringkali disebabkan oleh perubahan hormonal. Artikel ini mencakup strategi untuk mengelola stres, kecemasan, dan perasaan lainnya yang mungkin muncul, seperti berolahraga secara teratur, menjaga pola tidur yang sehat, dan mencari waktu untuk relaksasi. Artikel ini juga menekankan pentingnya berbicara dengan orang dewasa yang dipercaya jika emosi menjadi terlalu berat untuk ditangani sendiri.',
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),
@@ -152,7 +152,7 @@ class _ArtikelDSState extends State<ArtikelDS> {
               Image.asset(Assets.images.assetpubergirl3.path),
               const SizedBox(height: 20),
               Text(
-                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo con',
+                ' Ini mencakup tips bagi orang tua tentang bagaimana memulai percakapan tentang pubertas, seksualitas, dan kesehatan reproduksi dengan cara yang nyaman dan terbuka. Artikel ini juga memberikan saran tentang bagaimana orang tua dapat menjadi sumber informasi yang dapat dipercaya bagi anak-anak mereka, serta bagaimana menjawab pertanyaan anak dengan cara yang sesuai dengan usia mereka.',
                 style: regularBlackTextStyle.copyWith(fontSize: 15),
                 textAlign: TextAlign.justify,
               ),

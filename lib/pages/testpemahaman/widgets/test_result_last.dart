@@ -55,6 +55,7 @@ class _TestResultLastState extends State<TestResultLast> {
   }
 
   Widget _buildResultContent(ResultResponModels result) {
+    int totalSteps = result.totalsoal > 0 ? result.totalsoal : 1; // Pastikan totalSteps minimal 1
     return Container(
       padding: const EdgeInsets.all(16.0),
       decoration: ShapeDecoration(
@@ -94,7 +95,7 @@ class _TestResultLastState extends State<TestResultLast> {
             child: Column(
               children: [
                 CircularStepProgressIndicator(
-                  totalSteps: result.totalsoal,
+                  totalSteps: totalSteps,
                   currentStep: result.totalbenar,
                   stepSize: 10,
                   selectedColor: AppColors.green,

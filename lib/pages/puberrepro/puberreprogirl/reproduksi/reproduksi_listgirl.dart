@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:reproeduser/pages/home/dashboard.dart';
-import 'package:reproeduser/pages/puberrepro/puberreproman/pubertas_index.dart';
+import 'package:reproeduser/pages/puberrepro/puberreprogirl/pubertas_index.dart';
+import 'package:reproeduser/pages/puberrepro/puberreprogirl/reproduksi/reproindex.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 
 import '../../../widgets/theme.dart';
 import '../../models/rerpoduksi_models.dart';
 import '../../widgets/button_repro.dart';
 
-class ReproduksiList extends StatefulWidget {
-  const ReproduksiList({super.key});
+class ReproduksiListGirl extends StatefulWidget {
+  const ReproduksiListGirl({super.key});
 
 
   @override
-  State<ReproduksiList> createState() => _ReproduksiListState();
+  State<ReproduksiListGirl> createState() => _ReproduksiListGirlState();
 }
 
-class _ReproduksiListState extends State<ReproduksiList> {
-  late final List<MateriReproduksi> listRepro = dataMateriReproduksiPria;
+class _ReproduksiListGirlState extends State<ReproduksiListGirl> {
+  late final List<MateriReproduksi> listRepro = dataMateriReproduksiPerempuan;
 
   bool isPubertasSelected = true;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal[400],
+        backgroundColor: Colors.pink[100],
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           centerTitle: true,
           title: Text(
-            'PuberReproMan',
-            style: boldwhitetext.copyWith(fontSize: 15),
+            'PuberReproGirl',
+            style: boldBlackTextStyle.copyWith(fontSize: 15),
           ),
           leading: IconButton(
             onPressed: () {
@@ -37,7 +38,7 @@ class _ReproduksiListState extends State<ReproduksiList> {
             },
             icon: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
         ),
@@ -53,7 +54,7 @@ class _ReproduksiListState extends State<ReproduksiList> {
                       isSelected: !isPubertasSelected,
                       onSelected: () {
                         setState(() {
-                          context.pushReplacement(const PuberReproMan());
+                          context.pushReplacement(const PuberReprogirl());
                           isPubertasSelected = true;
                         });
                       },
@@ -79,7 +80,7 @@ class _ReproduksiListState extends State<ReproduksiList> {
                 Text(
                   "Ayu mulai membaca agar kamu semakin tau!",
                   textAlign: TextAlign.center,
-                  style: mediumWhiteTextStyle.copyWith(fontSize: 13),
+                  style: mediumBlackTextStyle.copyWith(fontSize: 13),
                 ),
                 const Divider(),
                 const SizedBox(height: 20),
@@ -89,22 +90,30 @@ class _ReproduksiListState extends State<ReproduksiList> {
                   itemCount: listRepro.length,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) => Card(
-                    color: const Color.fromARGB(255, 13, 122, 111),
-                    child: Container(
-                      width: double.infinity,
-                      height: 100, // Set height for the card
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 8),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            listRepro[index].judul,
-                            style: mediumWhiteTextStyle.copyWith(fontSize: 16),
-                          ),
-                        ],
+                  itemBuilder: (context, index) => InkWell(
+                    onTap: () {
+                      context.pushReplacement(RerpoIndexGirl(
+                        dataMateri: dataMateriReproduksiPerempuan,
+                        selectedMateri: dataMateriReproduksiPerempuan[index],
+                      ));
+                    },
+                    child: Card(
+                      color: Colors.pink[500],
+                      child: Container(
+                        width: double.infinity,
+                        height: 100, // Set height for the card
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 8),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              listRepro[index].judul,
+                              style: mediumWhiteTextStyle.copyWith(fontSize: 16),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

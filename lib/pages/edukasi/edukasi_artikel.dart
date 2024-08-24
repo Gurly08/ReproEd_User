@@ -119,7 +119,7 @@ class _EdukasiArtikelState extends State<EdukasiArtikel> {
                               color: const Color.fromARGB(255, 13, 122, 111),
                               child: Container(
                                 width: double.infinity,
-                                height: 185,
+                                height: 195,
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 12, vertical: 8),
                                 child: Column(
@@ -132,7 +132,7 @@ class _EdukasiArtikelState extends State<EdukasiArtikel> {
                                     ),
                                     const SizedBox(height: 12),
                                     Text(
-                                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                      data.edukasi[index].deskripsiEdukasi,
                                       style:
                                           regularwhitetext.copyWith(fontSize: 12),
                                     ),
