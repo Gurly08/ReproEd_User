@@ -18,6 +18,38 @@ class $AssetsImagesGen {
   /// File path: assets/images/Person.png
   AssetGenImage get person => const AssetGenImage('assets/images/Person.png');
 
+  /// File path: assets/images/alatreproduksiperempuan1.jpeg
+  AssetGenImage get alatreproduksiperempuan1 =>
+      const AssetGenImage('assets/images/alatreproduksiperempuan1.jpeg');
+
+  /// File path: assets/images/alatreproduksiperempuan2.jpeg
+  AssetGenImage get alatreproduksiperempuan2 =>
+      const AssetGenImage('assets/images/alatreproduksiperempuan2.jpeg');
+
+  /// File path: assets/images/alatreproduksiperempuan3.jpeg
+  AssetGenImage get alatreproduksiperempuan3 =>
+      const AssetGenImage('assets/images/alatreproduksiperempuan3.jpeg');
+
+  /// File path: assets/images/alatreproduksiperempuan4.jpeg
+  AssetGenImage get alatreproduksiperempuan4 =>
+      const AssetGenImage('assets/images/alatreproduksiperempuan4.jpeg');
+
+  /// File path: assets/images/alatreproduksipria1.jpeg
+  AssetGenImage get alatreproduksipria1 =>
+      const AssetGenImage('assets/images/alatreproduksipria1.jpeg');
+
+  /// File path: assets/images/alatreproduksipria2.jpeg
+  AssetGenImage get alatreproduksipria2 =>
+      const AssetGenImage('assets/images/alatreproduksipria2.jpeg');
+
+  /// File path: assets/images/alatreproduksipria3.jpeg
+  AssetGenImage get alatreproduksipria3 =>
+      const AssetGenImage('assets/images/alatreproduksipria3.jpeg');
+
+  /// File path: assets/images/alatreproduksipria4.jpeg
+  AssetGenImage get alatreproduksipria4 =>
+      const AssetGenImage('assets/images/alatreproduksipria4.jpeg');
+
   /// File path: assets/images/artikel2.png
   AssetGenImage get artikel2 =>
       const AssetGenImage('assets/images/artikel2.png');
@@ -34,6 +66,26 @@ class $AssetsImagesGen {
   AssetGenImage get assetpubergirl1 =>
       const AssetGenImage('assets/images/assetpubergirl1.png');
 
+  /// File path: assets/images/assetpubergirl10.png
+  AssetGenImage get assetpubergirl10 =>
+      const AssetGenImage('assets/images/assetpubergirl10.png');
+
+  /// File path: assets/images/assetpubergirl11.png
+  AssetGenImage get assetpubergirl11 =>
+      const AssetGenImage('assets/images/assetpubergirl11.png');
+
+  /// File path: assets/images/assetpubergirl12.png
+  AssetGenImage get assetpubergirl12 =>
+      const AssetGenImage('assets/images/assetpubergirl12.png');
+
+  /// File path: assets/images/assetpubergirl13.png
+  AssetGenImage get assetpubergirl13 =>
+      const AssetGenImage('assets/images/assetpubergirl13.png');
+
+  /// File path: assets/images/assetpubergirl14.png
+  AssetGenImage get assetpubergirl14 =>
+      const AssetGenImage('assets/images/assetpubergirl14.png');
+
   /// File path: assets/images/assetpubergirl2.png
   AssetGenImage get assetpubergirl2 =>
       const AssetGenImage('assets/images/assetpubergirl2.png');
@@ -46,9 +98,37 @@ class $AssetsImagesGen {
   AssetGenImage get assetpubergirl4 =>
       const AssetGenImage('assets/images/assetpubergirl4.png');
 
+  /// File path: assets/images/assetpubergirl5.png
+  AssetGenImage get assetpubergirl5 =>
+      const AssetGenImage('assets/images/assetpubergirl5.png');
+
+  /// File path: assets/images/assetpubergirl6.png
+  AssetGenImage get assetpubergirl6 =>
+      const AssetGenImage('assets/images/assetpubergirl6.png');
+
+  /// File path: assets/images/assetpubergirl7.png
+  AssetGenImage get assetpubergirl7 =>
+      const AssetGenImage('assets/images/assetpubergirl7.png');
+
+  /// File path: assets/images/assetpubergirl8.png
+  AssetGenImage get assetpubergirl8 =>
+      const AssetGenImage('assets/images/assetpubergirl8.png');
+
+  /// File path: assets/images/assetpubergirl9.png
+  AssetGenImage get assetpubergirl9 =>
+      const AssetGenImage('assets/images/assetpubergirl9.png');
+
   /// File path: assets/images/assetpuberman1.png
   AssetGenImage get assetpuberman1 =>
       const AssetGenImage('assets/images/assetpuberman1.png');
+
+  /// File path: assets/images/assetpuberman10.png
+  AssetGenImage get assetpuberman10 =>
+      const AssetGenImage('assets/images/assetpuberman10.png');
+
+  /// File path: assets/images/assetpuberman11.png
+  AssetGenImage get assetpuberman11 =>
+      const AssetGenImage('assets/images/assetpuberman11.png');
 
   /// File path: assets/images/assetpuberman2.png
   AssetGenImage get assetpuberman2 =>
@@ -58,17 +138,32 @@ class $AssetsImagesGen {
   AssetGenImage get assetpuberman3 =>
       const AssetGenImage('assets/images/assetpuberman3.png');
 
+  /// File path: assets/images/assetpuberman4.png
+  AssetGenImage get assetpuberman4 =>
+      const AssetGenImage('assets/images/assetpuberman4.png');
+
+  /// File path: assets/images/assetpuberman5.png
+  AssetGenImage get assetpuberman5 =>
+      const AssetGenImage('assets/images/assetpuberman5.png');
+
+  /// File path: assets/images/assetpuberman6.png
+  AssetGenImage get assetpuberman6 =>
+      const AssetGenImage('assets/images/assetpuberman6.png');
+
+  /// File path: assets/images/assetpuberman7.png
+  AssetGenImage get assetpuberman7 =>
+      const AssetGenImage('assets/images/assetpuberman7.png');
+
+  /// File path: assets/images/assetpuberman8.png
+  AssetGenImage get assetpuberman8 =>
+      const AssetGenImage('assets/images/assetpuberman8.png');
+
+  /// File path: assets/images/assetpuberman9.png
+  AssetGenImage get assetpuberman9 =>
+      const AssetGenImage('assets/images/assetpuberman9.png');
+
   /// File path: assets/images/boy.png
   AssetGenImage get boy => const AssetGenImage('assets/images/boy.png');
-
-  /// File path: assets/images/boys.png
-  AssetGenImage get boys => const AssetGenImage('assets/images/boys.png');
-
-  /// File path: assets/images/coin.png
-  AssetGenImage get coin => const AssetGenImage('assets/images/coin.png');
-
-  /// File path: assets/images/daily.png
-  AssetGenImage get daily => const AssetGenImage('assets/images/daily.png');
 
   /// File path: assets/images/dna.png
   AssetGenImage get dna => const AssetGenImage('assets/images/dna.png');
@@ -82,9 +177,6 @@ class $AssetsImagesGen {
   /// File path: assets/images/girl.png
   AssetGenImage get girl => const AssetGenImage('assets/images/girl.png');
 
-  /// File path: assets/images/google.png
-  AssetGenImage get google => const AssetGenImage('assets/images/google.png');
-
   /// File path: assets/images/ibuhamil.png
   AssetGenImage get ibuhamil =>
       const AssetGenImage('assets/images/ibuhamil.png');
@@ -92,6 +184,22 @@ class $AssetsImagesGen {
   /// File path: assets/images/karaktaku.png
   AssetGenImage get karaktaku =>
       const AssetGenImage('assets/images/karaktaku.png');
+
+  /// File path: assets/images/kehamilan1.jpg
+  AssetGenImage get kehamilan1 =>
+      const AssetGenImage('assets/images/kehamilan1.jpg');
+
+  /// File path: assets/images/kehamilan2.jpg
+  AssetGenImage get kehamilan2 =>
+      const AssetGenImage('assets/images/kehamilan2.jpg');
+
+  /// File path: assets/images/kehamilan3.jpg
+  AssetGenImage get kehamilan3 =>
+      const AssetGenImage('assets/images/kehamilan3.jpg');
+
+  /// File path: assets/images/kehamilan4.jpeg
+  AssetGenImage get kehamilan4 =>
+      const AssetGenImage('assets/images/kehamilan4.jpeg');
 
   /// File path: assets/images/kuis.png
   AssetGenImage get kuis => const AssetGenImage('assets/images/kuis.png');
@@ -105,15 +213,60 @@ class $AssetsImagesGen {
   /// File path: assets/images/materi.png
   AssetGenImage get materi => const AssetGenImage('assets/images/materi.png');
 
-  /// File path: assets/images/periksa.png
-  AssetGenImage get periksa => const AssetGenImage('assets/images/periksa.png');
-
   /// File path: assets/images/ppaku.jpg
   AssetGenImage get ppaku => const AssetGenImage('assets/images/ppaku.jpg');
 
   /// File path: assets/images/rbkaraktaku.png
   AssetGenImage get rbkaraktaku =>
       const AssetGenImage('assets/images/rbkaraktaku.png');
+
+  /// File path: assets/images/siklusmenstruasiperempuan1.jpeg
+  AssetGenImage get siklusmenstruasiperempuan1 =>
+      const AssetGenImage('assets/images/siklusmenstruasiperempuan1.jpeg');
+
+  /// File path: assets/images/siklusmenstruasiperempuan2.jpg
+  AssetGenImage get siklusmenstruasiperempuan2 =>
+      const AssetGenImage('assets/images/siklusmenstruasiperempuan2.jpg');
+
+  /// File path: assets/images/siklusmenstruasiperempuan3.jpg
+  AssetGenImage get siklusmenstruasiperempuan3 =>
+      const AssetGenImage('assets/images/siklusmenstruasiperempuan3.jpg');
+
+  /// File path: assets/images/siklusmenstruasiperempuan4.jpg
+  AssetGenImage get siklusmenstruasiperempuan4 =>
+      const AssetGenImage('assets/images/siklusmenstruasiperempuan4.jpg');
+
+  /// File path: assets/images/sistemreproduksiperempuan1.jpg
+  AssetGenImage get sistemreproduksiperempuan1 =>
+      const AssetGenImage('assets/images/sistemreproduksiperempuan1.jpg');
+
+  /// File path: assets/images/sistemreproduksiperempuan2.jpg
+  AssetGenImage get sistemreproduksiperempuan2 =>
+      const AssetGenImage('assets/images/sistemreproduksiperempuan2.jpg');
+
+  /// File path: assets/images/sistemreproduksiperempuan3.jpeg
+  AssetGenImage get sistemreproduksiperempuan3 =>
+      const AssetGenImage('assets/images/sistemreproduksiperempuan3.jpeg');
+
+  /// File path: assets/images/sistemreproduksiperempuan4.jpeg
+  AssetGenImage get sistemreproduksiperempuan4 =>
+      const AssetGenImage('assets/images/sistemreproduksiperempuan4.jpeg');
+
+  /// File path: assets/images/sistemreproduksipria1.jpeg
+  AssetGenImage get sistemreproduksipria1 =>
+      const AssetGenImage('assets/images/sistemreproduksipria1.jpeg');
+
+  /// File path: assets/images/sistemreproduksipria2.jpeg
+  AssetGenImage get sistemreproduksipria2 =>
+      const AssetGenImage('assets/images/sistemreproduksipria2.jpeg');
+
+  /// File path: assets/images/sistemreproduksipria3.jpeg
+  AssetGenImage get sistemreproduksipria3 =>
+      const AssetGenImage('assets/images/sistemreproduksipria3.jpeg');
+
+  /// File path: assets/images/sistemreproduksipria4.jpeg
+  AssetGenImage get sistemreproduksipria4 =>
+      const AssetGenImage('assets/images/sistemreproduksipria4.jpeg');
 
   /// File path: assets/images/smp187.jpg
   AssetGenImage get smp187 => const AssetGenImage('assets/images/smp187.jpg');
@@ -154,9 +307,6 @@ class $AssetsImagesGen {
   AssetGenImage get welcomekaraktaku =>
       const AssetGenImage('assets/images/welcomekaraktaku.png');
 
-  /// File path: assets/images/wlp1.png
-  AssetGenImage get wlp1 => const AssetGenImage('assets/images/wlp1.png');
-
   /// File path: assets/images/wpkuis.png
   AssetGenImage get wpkuis => const AssetGenImage('assets/images/wpkuis.png');
 
@@ -164,34 +314,71 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
         logout,
         person,
+        alatreproduksiperempuan1,
+        alatreproduksiperempuan2,
+        alatreproduksiperempuan3,
+        alatreproduksiperempuan4,
+        alatreproduksipria1,
+        alatreproduksipria2,
+        alatreproduksipria3,
+        alatreproduksipria4,
         artikel2,
         artikel3,
         artikel4,
         assetpubergirl1,
+        assetpubergirl10,
+        assetpubergirl11,
+        assetpubergirl12,
+        assetpubergirl13,
+        assetpubergirl14,
         assetpubergirl2,
         assetpubergirl3,
         assetpubergirl4,
+        assetpubergirl5,
+        assetpubergirl6,
+        assetpubergirl7,
+        assetpubergirl8,
+        assetpubergirl9,
         assetpuberman1,
+        assetpuberman10,
+        assetpuberman11,
         assetpuberman2,
         assetpuberman3,
+        assetpuberman4,
+        assetpuberman5,
+        assetpuberman6,
+        assetpuberman7,
+        assetpuberman8,
+        assetpuberman9,
         boy,
-        boys,
-        coin,
-        daily,
         dna,
         esgul,
         finish,
         girl,
-        google,
         ibuhamil,
         karaktaku,
+        kehamilan1,
+        kehamilan2,
+        kehamilan3,
+        kehamilan4,
         kuis,
         latter,
         logo,
         materi,
-        periksa,
         ppaku,
         rbkaraktaku,
+        siklusmenstruasiperempuan1,
+        siklusmenstruasiperempuan2,
+        siklusmenstruasiperempuan3,
+        siklusmenstruasiperempuan4,
+        sistemreproduksiperempuan1,
+        sistemreproduksiperempuan2,
+        sistemreproduksiperempuan3,
+        sistemreproduksiperempuan4,
+        sistemreproduksipria1,
+        sistemreproduksipria2,
+        sistemreproduksipria3,
+        sistemreproduksipria4,
         smp187,
         starttest,
         sub1man,
@@ -203,7 +390,6 @@ class $AssetsImagesGen {
         subpubergirl3,
         subpubergirl4,
         welcomekaraktaku,
-        wlp1,
         wpkuis
       ];
 }

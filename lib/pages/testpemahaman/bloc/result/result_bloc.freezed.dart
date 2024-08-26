@@ -19,19 +19,19 @@ mixin _$ResultEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getResult,
+    required TResult Function(String kategori) getResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getResult,
+    TResult? Function(String kategori)? getResult,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getResult,
+    TResult Function(String kategori)? getResult,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +113,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getResult,
+    required TResult Function(String kategori) getResult,
   }) {
     return started();
   }
@@ -122,7 +122,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getResult,
+    TResult? Function(String kategori)? getResult,
   }) {
     return started?.call();
   }
@@ -131,7 +131,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getResult,
+    TResult Function(String kategori)? getResult,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -181,6 +181,8 @@ abstract class _$$GetResultImplCopyWith<$Res> {
   factory _$$GetResultImplCopyWith(
           _$GetResultImpl value, $Res Function(_$GetResultImpl) then) =
       __$$GetResultImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String kategori});
 }
 
 /// @nodoc
@@ -190,54 +192,79 @@ class __$$GetResultImplCopyWithImpl<$Res>
   __$$GetResultImplCopyWithImpl(
       _$GetResultImpl _value, $Res Function(_$GetResultImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? kategori = null,
+  }) {
+    return _then(_$GetResultImpl(
+      null == kategori
+          ? _value.kategori
+          : kategori // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetResultImpl implements _GetResult {
-  const _$GetResultImpl();
+  const _$GetResultImpl(this.kategori);
+
+  @override
+  final String kategori;
 
   @override
   String toString() {
-    return 'ResultEvent.getResult()';
+    return 'ResultEvent.getResult(kategori: $kategori)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetResultImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetResultImpl &&
+            (identical(other.kategori, kategori) ||
+                other.kategori == kategori));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, kategori);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetResultImplCopyWith<_$GetResultImpl> get copyWith =>
+      __$$GetResultImplCopyWithImpl<_$GetResultImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getResult,
+    required TResult Function(String kategori) getResult,
   }) {
-    return getResult();
+    return getResult(kategori);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getResult,
+    TResult? Function(String kategori)? getResult,
   }) {
-    return getResult?.call();
+    return getResult?.call(kategori);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getResult,
+    TResult Function(String kategori)? getResult,
     required TResult orElse(),
   }) {
     if (getResult != null) {
-      return getResult();
+      return getResult(kategori);
     }
     return orElse();
   }
@@ -275,7 +302,12 @@ class _$GetResultImpl implements _GetResult {
 }
 
 abstract class _GetResult implements ResultEvent {
-  const factory _GetResult() = _$GetResultImpl;
+  const factory _GetResult(final String kategori) = _$GetResultImpl;
+
+  String get kategori;
+  @JsonKey(ignore: true)
+  _$$GetResultImplCopyWith<_$GetResultImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

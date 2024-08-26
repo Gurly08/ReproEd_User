@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:reproeduser/pages/edukasi/edukasi_artikel.dart';
+import 'package:reproeduser/pages/home/dashboard.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
-import '../home/home.dart';
-import '../../data/model/response/edukasi_response_models.dart'; 
+import '../../data/model/response/edukasi_response_models.dart';
 import '../widgets/theme.dart';
 
 class VideoScreen extends StatefulWidget {
@@ -21,12 +21,8 @@ class _VideoScreenState extends State<VideoScreen> {
   ChewieController? _chewieController;
 
   final List<String> _videoList = [
-    'assets/videos/edukasi/exmpale.mp4',
-    'assets/videos/edukasi/exmpale.mp4',
-    'assets/videos/edukasi/exmpale.mp4',
-    'assets/videos/edukasi/exmpale.mp4',
-    'assets/videos/edukasi/exmpale.mp4',
-    'assets/videos/edukasi/exmpale.mp4',
+    'assets/videos/v1.mp4',
+    'assets/videos/v2.mp4',
   ];
 
   // ADDING VIDEO YA (JANGAN DI COMMENT YANG ATAS KALO GAMAU EROR HEHEHE 🙏🙏🙏🙏)
@@ -84,7 +80,7 @@ class _VideoScreenState extends State<VideoScreen> {
           onPressed: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const Home()),
+              MaterialPageRoute(builder: (context) => const Dashboard()),
             );
           },
           icon: const Icon(
@@ -144,7 +140,7 @@ class _VideoScreenState extends State<VideoScreen> {
           const SizedBox(height: 20),
           Expanded(
             child: ListView.builder(
-              itemCount: _videoList.length,
+              itemCount: 2,
               itemBuilder: (context, index) {
                 return Container(
                   decoration: BoxDecoration(
@@ -161,7 +157,7 @@ class _VideoScreenState extends State<VideoScreen> {
                         const SizedBox(height: 12),
                         const Text(
                             maxLines: 3,
-                            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui p ex ea commodo  con')
+                            'Video edukasi yang diperuntukan bagi ibu atau anak')
                       ],
                     ),
                     contentPadding: const EdgeInsets.all(8),

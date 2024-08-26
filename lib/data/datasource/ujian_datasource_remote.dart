@@ -6,11 +6,11 @@ import 'package:reproeduser/data/model/response/ujian_response_models.dart';
 import '../../core/constants/variabel.dart';
 import 'auth_datasource_local.dart';
 
-class UjianRemoteDatasource{
+class UjianRemoteDatasource {
   Future<Either<String, UjianResponseModel>> getUjianByKategori(
-    String kategori) async{
+      String kategori) async {
     final authData = await AuthLocalDatasource().getAuthData();
-    final response =await http.get(
+    final response = await http.get(
       Uri.parse('${Variables.baseUrl}/api/get-soal-ujian?kategori=$kategori'),
       headers: <String, String>{
         'Content-Type': 'application/json; chartset=UTF-8',
@@ -19,15 +19,15 @@ class UjianRemoteDatasource{
     );
 
     if (response.statusCode == 200) {
-      return Right(UjianResponseModel.fromJson(response.body));   
+      return Right(UjianResponseModel.fromJson(response.body));
     } else {
       return const Left('get ujian gagal');
     }
   }
 
-  Future<Either<String, String>> createUjian() async{
+  Future<Either<String, String>> createUjian() async {
     final authData = await AuthLocalDatasource().getAuthData();
-    final response =await http.post(
+    final response = await http.post(
       Uri.parse('${Variables.baseUrl}/api/create-ujian'),
       headers: <String, String>{
         'Content-Type': 'application/json; chartset=UTF-8',
@@ -36,19 +36,19 @@ class UjianRemoteDatasource{
     );
 
     if (response.statusCode == 200) {
-      return const Right('Create Ujian Berhasil :)');   
+      return const Right('Create Ujian Berhasil :)');
     } else {
       return const Left('get ujian gagal');
     }
   }
 
-  Future<Either<String, String>> answer(int soalId, String jawaban) async{
+  Future<Either<String, String>> answer(int soalId, String jawaban) async {
     final authData = await AuthLocalDatasource().getAuthData();
     final body = {
       'soal_id': soalId,
       'jawaban': jawaban,
     };
-    final response =await http.post(
+    final response = await http.post(
       Uri.parse('${Variables.baseUrl}/api/answers'),
       headers: <String, String>{
         'Content-Type': 'application/json; chartset=UTF-8',
@@ -58,15 +58,15 @@ class UjianRemoteDatasource{
     );
 
     if (response.statusCode == 200) {
-      return const Right('answer berhasil');   
+      return const Right('answer berhasil');
     } else {
       return const Left('answer gagal');
     }
   }
 
-  Future<Either<String, String>> hitungNilai(String kategori) async{
+  Future<Either<String, String>> hitungNilai(String kategori) async {
     final authData = await AuthLocalDatasource().getAuthData();
-    final response =await http.get(
+    final response = await http.get(
       Uri.parse('${Variables.baseUrl}/api/get-nilai?kategori=$kategori'),
       headers: <String, String>{
         'Content-Type': 'application/json; chartset=UTF-8',
@@ -75,25 +75,27 @@ class UjianRemoteDatasource{
     );
 
     if (response.statusCode == 200) {
-      return const Right('hitung nilai berhasil');   
+      return const Right('hitung nilai berhasil');
     } else {
       return const Left('hitung nilai gagal');
     }
   }
 
-  Future<Either<String, ResultResponModels>> resultTest() async{
+  Future<Either<String, ResultResponModels>> resultTest(String kategori) async {
     final authData = await AuthLocalDatasource().getAuthData();
     // print('kategori: $kategori');
-    final response =await http.get(
-      Uri.parse('${Variables.baseUrl}/api/get-result'),
+    final response = await http.get(
+      Uri.parse('${Variables.baseUrl}/api/get-result?kategori=$kategori'),
       headers: <String, String>{
         'Content-Type': 'application/json; chartset=UTF-8',
         'Authorization': 'Bearer ${authData.accessToken}',
       },
     );
+    print(12);
+    print(response.body);
 
     if (response.statusCode == 200) {
-      return Right(ResultResponModels.fromJson(response.body));   
+      return Right(ResultResponModels.fromJson(response.body));
     } else {
       return const Left('hitung nilai gagal');
     }

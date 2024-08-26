@@ -15,7 +15,8 @@ class ResultTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const paddingHorizontalSize = 16.0;
-    const paddingHorizontal =EdgeInsets.symmetric(horizontal: paddingHorizontalSize);
+    const paddingHorizontal =
+        EdgeInsets.symmetric(horizontal: paddingHorizontalSize);
     final List<QuizModel> datas = [
       QuizModel(
         name: 'Kesehatan Reproduksi',
@@ -48,9 +49,16 @@ class ResultTest extends StatelessWidget {
       body: ListView(
         children: [
           const SizedBox(height: 30.0),
-          const Padding(
+          Padding(
             padding: paddingHorizontal,
-            child: TestResultLast(),
+            child: Column(
+              children: datas
+                  .map((quiz) => Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: TestResultLast(kategori: quiz.kategori),
+                      ))
+                  .toList(),
+            ),
           ),
           const SizedBox(height: 40.0),
           const Padding(

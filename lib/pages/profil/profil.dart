@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reproeduser/pages/auth/bloc/logout/logout_bloc.dart';
 import 'package:reproeduser/pages/auth/login.dart';
 import 'package:reproeduser/pages/home/dashboard.dart';
+import 'package:reproeduser/pages/profil/tentang_aplikasi.dart';
 import 'package:reproeduser/pages/route/route_context.dart';
+import 'package:reproeduser/pages/testpemahaman/result_test.dart';
 
 import '../../data/datasource/auth_datasource_local.dart';
 import '../../data/model/response/auth_response_models.dart';
@@ -35,11 +37,20 @@ class Profil extends StatelessWidget {
                   alignment: Alignment.topCenter,
                   child: Column(
                     children: [
-                      const CircleAvatar(
-                          radius: 50,
-                          backgroundImage: AssetImage(
-                            'assets/images/ppaku.jpg',
-                          )),
+                      // const CircleAvatar(
+                      //     radius: 50,
+                      //     backgroundImage: AssetImage(
+                      //       'assets/images/ppaku.jpg',
+                      //     )),
+                      ClipRRect(
+                      borderRadius: const BorderRadius.all(Radius.circular(50.0)),
+                      child: Image.network(
+                        'https://i.pravatar.cc/200',
+                        width: 64.0,
+                        height: 64.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                       const SizedBox(height: 25),
                       //untuk menmapilkan username yang sesuai dengan nama user yang regis atau login
                     FutureBuilder<AuthResponseModel>(
@@ -98,14 +109,30 @@ class Profil extends StatelessWidget {
                           //         color: Colors.yellow[200]),
                           //   ),
                           // ),
-                          const SizedBox(height: 18),
+                          const SizedBox(height: 22),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              context.pushReplacement(const TentangAplikasi());
+                            },
                             child: CardProfil(
                               layanan: Layanan(
                                 id: 5,
                                 imageUrl: 'assets/images/latter.png',
                                 name: 'Tentang Aplikasi',
+                                color: Colors.blue[300],
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 18),
+                          InkWell(
+                            onTap: () {
+                              context.pushReplacement(const ResultTest());
+                            },
+                            child: CardProfil(
+                              layanan: Layanan(
+                                id: 5,
+                                imageUrl: 'assets/images/latter.png',
+                                name: 'Hasil Test',
                                 color: Colors.blue[300],
                               ),
                             ),

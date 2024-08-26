@@ -9,7 +9,9 @@ import '../../widgets/color.dart';
 import 'result_value.dart';
 
 class TestResultLast extends StatefulWidget {
-  const TestResultLast({super.key});
+  final String kategori;
+
+  const TestResultLast({super.key, required this.kategori});
 
   @override
   State<TestResultLast> createState() => _TestResultLastState();
@@ -19,7 +21,8 @@ class _TestResultLastState extends State<TestResultLast> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ResultBloc(UjianRemoteDatasource())..add(const ResultEvent.getResult()),
+      create: (context) => ResultBloc(UjianRemoteDatasource())
+        ..add(ResultEvent.getResult(widget.kategori)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -55,7 +58,8 @@ class _TestResultLastState extends State<TestResultLast> {
   }
 
   Widget _buildResultContent(ResultResponModels result) {
-    int totalSteps = result.totalsoal > 0 ? result.totalsoal : 1; // Pastikan totalSteps minimal 1
+    print(result.totalbenar);
+    print(result.totalsalah);
     return Container(
       padding: const EdgeInsets.all(16.0),
       decoration: ShapeDecoration(
@@ -95,7 +99,7 @@ class _TestResultLastState extends State<TestResultLast> {
             child: Column(
               children: [
                 CircularStepProgressIndicator(
-                  totalSteps: totalSteps,
+                  totalSteps: result.totalsoal > 0 ? result.totalsoal : 1,
                   currentStep: result.totalbenar,
                   stepSize: 10,
                   selectedColor: AppColors.green,
